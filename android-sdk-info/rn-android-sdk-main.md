@@ -40,7 +40,7 @@ July 30, 2019
 * Different initialization of video ad classes: Provide **domain** and **ad unit ID** values instead of **vastURL**.
 * Improved UI/UX for interstitial ads.
 * Updates and improved support for the OMSDK library.
-* Improvements and fixes for MRAID behaviour.
+* Improvements and fixes for MRAID behavior.
 * Corrections for pre-caching of video ads.
 * Availability of Ad Mob adapter.
 
@@ -55,7 +55,7 @@ Version 4.9.1
 
 June 23, 2019
 
-This version of the OpenX Mobile Android SDK includes a critical bug fix to resolve crashes for display ads with an unlimited number of refreshe
+This version of the OpenX Mobile Android SDK includes a critical bug fix to resolve crashes for display ads with an unlimited number of refreshes.
 
 Version 4.9
 -------------
