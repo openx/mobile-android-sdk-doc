@@ -56,7 +56,7 @@ quality issues](android-sdk-ad-quality.md).
 Load 300x250 video ads in your app
 ------------------------------------
 
-1.  Define a slot for your video ad by including an
+1.  Define a slot for your video ad by including an XML namespace 'xmlns:app="http://schemas.android.com/apk/res-auto"' and an
     XML block in your layout XML or programmatically.
 
     The OpenX Mobile Android SDK provides a custom View subclass,
@@ -69,11 +69,12 @@ Load 300x250 video ads in your app
 
     Allowed XML attributes are:
 
-    -   `adUnitID` = Denotes the adunit. You will create this in the
+    -   `adUnitId` = Denotes the adunit. You will create this in the
         OpenX UI.
     -   `domain` = Denotes the delivery domain on which an adUnitID was
         created (for example: `PUBLISHER-d.openx.net`).
-    -   `adUnitGroupID` = Denotes the adUnitGroupID. 
+    -   `adUnitGroupId` = Denotes the adUnitGroupId. 
+    -   `autoDisplayOnLoad` = Denotes whether the ad will be displayed immediately after it's ready.
 
     Example:
 
@@ -82,10 +83,10 @@ Load 300x250 video ads in your app
         android:id="@+id/adView" 
         android:layout_width="300dp"
         android:layout_height="250dp"
-        adUnitID="537454411"
-        domain="PUBLISHER-d.openx.net"
-        adUnitGroupID="1234"
-        autoDisplayOnLoad="true"
+        app:adUnitId="537454411"
+        app:domain="PUBLISHER-d.openx.net"
+        app:adUnitGroupId="1234"
+        app:autoDisplayOnLoad="true"
     />
         
     ```

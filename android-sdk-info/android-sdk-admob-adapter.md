@@ -8,7 +8,7 @@ OpenX Mobile Android SDK with the Google Mobile Ads SDK.
 To help you quickly build your adapter, OpenX provides sample adapter
 code for banner, interstitial display, and opt-in (rewarded) video ads
 in the AdMob adapter sample app. The sample adapters are built according
-to [AdMob's instructions](https://developers.google.com/admob/android/mediation/#custom_events).
+to [AdMob\'s instructions](https://developers.google.com/admob/android/mediation/#custom_events).
 Make sure you integrate the ad format into your app according to the
 [Prerequisites](https://developers.google.com/admob/android/mediation/#prerequisites)
 indicated by AdMob.

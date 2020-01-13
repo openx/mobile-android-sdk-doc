@@ -1,7 +1,28 @@
 OpenX Mobile Android SDK Release Notes
 ======================================
 
-For a complete list of requirements and supported versions, see [Getting started](android-sdk-getting-started.md#requirements).
+
+Version 4.11
+-------------
+
+Jan 14, 2020
+
+**Features**
+
+* Support the deeplink+. The SDK is able to manage the app-targeting campaigns. 
+* Track viewable impressions. The SDK tracks impressions according to the MRC Guidelines.
+* Support CCPA.
+* Update the Transparency and Consent Framework (GDPR) to TCF v2.
+* Support Android Q.
+* Support Vertical Video ads
+* Support MoPub’s custom AdapterConfiguration
+
+**Changes and Improvements**
+
+* The configuration settings for ad requests was changed. The access to the sensitive fields was limited to prevent inappropriate bidding.
+* The behaviour between several active ad views was improved. Now you can place different ad units on the same view.
+* Upgrade the minimum supported Android version API 16 (Android 4.1), 
+* Improvements and corrections for the logging system. 
 
 Version 4.10
 -------------
