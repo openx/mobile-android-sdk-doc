@@ -39,24 +39,24 @@ class name of your custom event (for example,
 
         ```
         {
-        "AD_UNIT_ID": "[OPENX AD UNIT]", 
+        "AD_UNIT_ID": "[OPENX AD UNIT]",
         "AD_DOMAIN": "[OPENX DELIVERY DOMAIN]"
         }
         ```
-    
+
         For example:
-    
-        ``` 
+
+        ```
         {
-        "AD_UNIT_ID": "123456789", 
+        "AD_UNIT_ID": "123456789",
         "AD_DOMAIN": "ox-d.mobile.servedbyopenx.com"
         }
         ```
     -   For video interstitial and opt-in video ads:
 
-        ``` 
+        ```
         {
-        "AD_UNIT_ID": "[OPENX AD UNIT]", 
+        "AD_UNIT_ID": "[OPENX AD UNIT]",
         "AD_DOMAIN": "[OPENX DELIVERY DOMAIN]"
         }
         ```
@@ -64,25 +64,25 @@ class name of your custom event (for example,
 
         ```
         {
-        "AD_UNIT_ID": "[OPENX AD UNIT]", 
+        "AD_UNIT_ID": "[OPENX AD UNIT]",
         "AD_DOMAIN": "[OPENX DELIVERY DOMAIN]",
         "AD_UNIT_GROUP_ID": "[AD UNIT GROUP ID]"
         }
         ```
 
          For example:
-    
-        ``` 
+
+        ```
         {
-        "AD_UNIT_ID": "123456789", 
+        "AD_UNIT_ID": "123456789",
         "AD_DOMAIN": "ox-d.mobile.servedbyopenx.com",
         "AD_UNIT_GROUP_ID": "123456"
         }
         ```
-    
+
         ```
         {
-        "AD_UNIT_ID": "123456789", 
+        "AD_UNIT_ID": "123456789",
         "AD_DOMAIN": "ox-d.mobile.servedbyopenx.com"
         }
         ```
@@ -94,4 +94,3 @@ for each adapter.
 
 7. [Test](android-sdk-self-test.md) your implementation and notify OpenX
 to enable live traffic.
-

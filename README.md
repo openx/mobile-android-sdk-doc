@@ -30,10 +30,10 @@ The following are some of the key capabilities of the SDK.
     -   [Flex ads](android-sdk-info/android-sdk-flex-ads.md)
     -   [Opt-in video](android-sdk-info/android-sdk-video-optin-integration.md). If you would like to participate in the opt-in video beta, contact OpenX.
     -   [300x250 video](android-sdk-info/android-sdk-video-ad-view-integration.md) (New in 4.10)
--   **Support Open Measurement**. The OpenX SDK is certified with IAB and MOAT. 
+-   **Support Open Measurement**. The OpenX SDK is certified with IAB and MOAT.
 -   **Privacy Regulation Compliance**. The OpenX SDK implements the support of **GDPR**, **CCPA**, **COPPA** requirements according to the IAB specifications.
 -   **Direct SDK integration**. Allows you to pass first-party app data, user data, device data, and location data.
--   **App targeting campaigns**. Regarding to the [support of deeplink+](android-sdk-info/android-sdk-deeplinkplus.md) SDK is able to manage the ads with premium UX for retargenting campaigns.
+-   **App targeting campaigns**. Regarding to the [support of deeplink+](android-sdk-info/android-sdk-deeplinkplus.md) SDK is able to manage the ads with premium UX for retargeting campaigns.
 -  ❗  **Customization**. Permits the use of [custom ad parameters](android-sdk-info/android-sdk-request-params.md).
 -   **Quality controls and safeguards:**
     -   Proactive creative scanner and smart logic that minimizes re-directs and spoofed user-clicks.

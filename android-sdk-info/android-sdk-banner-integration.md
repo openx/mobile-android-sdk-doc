@@ -29,13 +29,13 @@ public class ExampleActivity extends Activity implements AdEventsListener
     {
         @Override
         public void adDidLoad(BannerView bannerView, AdDetails adDetails) {
-            Toast.makeText(getApplicationContext(), 
+            Toast.makeText(getApplicationContext(),
             "Banner successfully loaded.", Toast.LENGTH_SHORT).show();
         }
 
         // ... implement AdEventsListener overrides ...
     }
-        
+
 ```
 
 and pass your `Activity` to the `BannerView` as it is being created:
@@ -56,13 +56,13 @@ Load banner ads in your app
     `BannerView`, which handles requesting and loading ads.
 
     Option 1: Define a slot for your banner ad in your layout XML.
-    
+
     First declare XML namespace on top of your layout: `xmlns:app="http://schemas.android.com/apk/res-auto"`.
     And then include this XML block to your Activity's or Fragment's
     layout.
 
     Allowed XML attributes are:
-    
+
     -   `domain` = Denotes the delivery domain on which an adUnitID was
         created (for example: `PUBLISHER-d.openx.net`).
     -   `adUnitId` = Denotes the adunit. You will create this in the
@@ -79,7 +79,7 @@ Load banner ads in your app
 
     ```xml
     <com.openx.view.plugplay.views.banner.BannerView
-        android:id="@+id/adView" 
+        android:id="@+id/adView"
         android:layout_width="320dp"
         android:layout_height="50dp"
         app:domain="PUBLISHER-d.openx.net"
@@ -88,7 +88,7 @@ Load banner ads in your app
         app:autoRefreshMax="50"
         app:flexAdSize = "320x50"
     />
-        
+
     ```
 
     Option 2: Programmatically create a banner.
@@ -110,7 +110,7 @@ Load banner ads in your app
         adContainer.addView(bannerView);
     }
     // Where LinearLayout could be any of your layouts, like ConstraintLayout, GridLayout, RelativeLayout, and so on.
-        
+
     ```
 
 2.  Load an ad.
@@ -121,16 +121,16 @@ Load banner ads in your app
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
         // TODO: Initialize or set your bannerView variable here.
-        
+
         createAd(bannerView);
     }
-                            
+
     private void createAd(BannerView bannerView) {
-     
+
         if (bannerView != null) {
-     
+
             // Set user parameters to enrich ad request data.
             UserParameters userParameters = new UserParameters();
 
@@ -138,30 +138,30 @@ Load banner ads in your app
 
             // Set userparameters on bannerView:
             bannerView.setUserParameters(userParameters);
-     
+
             // Set predefined flex ad size here.
             bannerView.setFlexAdSize(AdConfiguration.OXMAdSize.BANNER_320x50);
-     
+
             // Or, set your custom flex ad size as a string.
             // bannerView.setFlexAdSize("320x50,400x350");
-     
+
             // Set an interval at which this banner should refresh.
             bannerView.setAutoRefreshDelay(30);
-     
+
             // Set the maximum number of times the banner should refresh.
             bannerView.setAutoRefreshMax(3);
-     
+
             // Set an ad event listener to get notified of the ad life cycle.
             bannerView.addAdEventListener(this);
-     
+
             // Load an ad.
             bannerView.load();
-     
+
             // Tip: call just bannerView.setAutoDisplayOnLoad(true); without bannerView.show();
             // Tip: or call bannerView.setAutoDisplayOnLoad(false); followed by bannerView.show();
-     
+
         }
-     
+
     }
     ```
 
@@ -170,19 +170,19 @@ Load banner ads in your app
     ```java
     @Override
     protected void onDestroy() {
-                            
+
         super.onDestroy();
-                            
+
         if (bannerView != null) {
-                            
+
             bannerView.destroy();
             bannerView = null;
-                            
+
         }
     }
-            
+
     ```
-    
+
 For information about enriching data in the ad request, see [Parameters](android-sdk-request-params.md).
 
 Refreshing ads
@@ -256,5 +256,4 @@ Example:
     android:layout_centerHorizontal="true" />
 ```
 
-`AdEventsListener` provides `adDidLoad()` when the ad is loaded. 
-
+`AdEventsListener` provides `adDidLoad()` when the ad is loaded.

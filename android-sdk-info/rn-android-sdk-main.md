@@ -9,20 +9,20 @@ Jan 14, 2020
 
 **Features**
 
-* Support the deeplink+. The SDK is able to manage the app-targeting campaigns. 
+* Support the deeplink+. The SDK is able to manage the app-targeting campaigns.
 * Track viewable impressions. The SDK tracks impressions according to the MRC Guidelines.
 * Support CCPA.
 * Update the Transparency and Consent Framework (GDPR) to TCF v2.
 * Support Android Q.
-* Support Vertical Video ads
-* Support MoPub’s custom AdapterConfiguration
+* Support Vertical Video ads.
+* Support MoPub’s custom AdapterConfiguration.
 
 **Changes and Improvements**
 
 * The configuration settings for ad requests was changed. The access to the sensitive fields was limited to prevent inappropriate bidding.
-* The behaviour between several active ad views was improved. Now you can place different ad units on the same view.
-* Upgrade the minimum supported Android version API 16 (Android 4.1), 
-* Improvements and corrections for the logging system. 
+* The behavior between several active ad views was improved. Now you can place different ad units on the same view.
+* Upgrade the minimum supported Android version API 16 (Android 4.1),
+* Improvements and corrections for the logging system.
 
 Version 4.10
 -------------
@@ -32,7 +32,7 @@ July 30, 2019
 
 **Features**
 
-* SSL connection for all ad requests. Starting from 4.10 OpenX SDK performs only secure ad requests. 
+* SSL connection for all ad requests. Starting from 4.10 OpenX SDK performs only secure ad requests.
 * 300x250 Video ad format. Now publishers may integrate the video ads into their UI.
 
 **Changes and Improvements**
@@ -124,14 +124,14 @@ April 4, 2018
 
 This version of the OpenX Mobile Android SDK includes bug fixes.
 
-Version 4.6.1 
+Version 4.6.1
 -------------
 
 January 16, 2018
 
 This version of the OpenX Mobile Android SDK includes bug fixes.
 
-Version 4.6.0 
+Version 4.6.0
 -------------
 
 October 4, 2017
@@ -142,7 +142,7 @@ This version of the OpenX Mobile Android SDK includes:
 -   Improved [exception messages](android-sdk-self-test.md#ad-exception-types-and-examples) for troubleshooting.
 -   Bug fixes.
 
-Version 4.5.0 
+Version 4.5.0
 -------------
 
 August 23, 2017
