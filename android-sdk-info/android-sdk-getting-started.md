@@ -48,10 +48,10 @@ Ad Formats and Tips
 Integration process overview
 -----------------------------------------
 
-To integrate the OpenX Mobile Android SDK, complete the following steps. To explore the provided sample implementations, [download](https://ssl-i.cdn.openx.com/sdks/OpenX_Mobile_SDK_Android_4.10.0.zip) the SDK and [launch the demo app](android-sdk-demo-app-launch.md).
+To integrate the OpenX Mobile Android SDK, complete the following steps. To explore the provided sample implementations, [download](http://sdk.prod.gcp.openx.org/android/4.11.0/OpenX_Mobile_SDK_Android_4.11.0.zip) the SDK and [launch the demo app](android-sdk-demo-app-launch.md).
 
 1.  Make sure you meet the above [requirements](#requirements).
-2.  [Download](https://ssl-i.cdn.openx.com/sdks/OpenX_Mobile_SDK_Android_4.10.0.zip) the [OpenX Mobile Android SDK zip file](#sdk-zip-file-contents).
+2.  [Download](http://sdk.prod.gcp.openx.org/android/4.11.0/OpenX_Mobile_SDK_Android_4.11.0.zips) the [OpenX Mobile Android SDK zip file](#sdk-zip-file-contents).
 3.  [Import the SDK](android-sdk-importing.md) into your app.
 4.  [Integrate the SDK with your app](android-sdk-integration.md) by updating the Android manifest.
 5.  If you want to use OpenX as a source of demand on MoPub and/or AdMob via their respective SDKs, build the [MoPub](android-sdk-mopub-adapter.md) and/or [AdMob](android-sdk-admob-adapter.md) SDK adapter and skip to

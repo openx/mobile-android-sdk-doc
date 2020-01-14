@@ -12,9 +12,9 @@ See [release notes](android-sdk-info/rn-android-sdk-main.md) for all SDK version
 
 Quick download links:
 
-- [OpenX Android SDK and Demo Application](https://ssl-i.cdn.openx.com/sdks/OpenX_Mobile_SDK_Android_4.10.0.zip)
-- [MoPub Adapter and Demo Application](https://ssl-i.cdn.openx.com/sdks/OpenX_Mobile_SDK_Android_MoPub_Adapter_Demo_4.10.0.zip)
-- [AdMob Adapter and Demo Application](https://ssl-i.cdn.openx.com/sdks/OpenX_Mobile_SDK_Android_AdMob_Adapter_Demo_4.10.0.zip)
+- [OpenX Android SDK and Demo Application](http://sdk.prod.gcp.openx.org/android/4.11.0/OpenX_Mobile_SDK_Android_4.11.0.zip)
+- [MoPub Adapter and Demo Application](http://sdk.prod.gcp.openx.org/android/4.11.0/OpenX_Mobile_SDK_Android_MoPub_Adapter_Demo_4.11.0.zip)
+- [AdMob Adapter and Demo Application](http://sdk.prod.gcp.openx.org/android/4.11.0/OpenX_Mobile_SDK_Android_AdMob_Adapter_Demo_4.11.0.zip)
 
 ## Android SDK Overview
 
