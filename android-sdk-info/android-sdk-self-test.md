@@ -29,7 +29,7 @@ Please make sure that you:
     -   `adDidFailToLoad` (highly recommended)
     -   Other delegate methods as needed
 -   Have turned on the SDK logging by setting the
-    [OXSettings](android-sdk-request-params.md#configuration-parameters) `logLevel`
+    [OXSettings](android-sdk-request-params.md#oxsettings) `logLevel`
     parameter to `DEBUG` on app `init`.
     > **Tip:** You may want to copy and save your on-screen log messages in case you need to include them in your resolution assistance request
 -   Are using the latest version of the SDK (to check for the latest

@@ -29,13 +29,13 @@ public class ExampleActivity extends Activity implements AdEventsListener
     {
         @Override
         public void adDidLoad(BannerView bannerView, AdDetails adDetails) {
-            Toast.makeText(getApplicationContext(), 
+            Toast.makeText(getApplicationContext(),
             "Banner successfully loaded.", Toast.LENGTH_SHORT).show();
         }
 
         // ... implement AdEventsListener overrides ...
     }
-        
+
 ```
 
 and pass your `Activity` to the `BannerView` as it is being created:
@@ -57,40 +57,38 @@ Load banner ads in your app
 
     Option 1: Define a slot for your banner ad in your layout XML.
 
-    Start by including this XML block to your Activity's or Fragment's
+    First declare XML namespace on top of your layout: `xmlns:app="http://schemas.android.com/apk/res-auto"`.
+    And then include this XML block to your Activity's or Fragment's
     layout.
 
     Allowed XML attributes are:
 
-    -   `adUnitID` = Denotes the adunit. You will create this in the
+    -   `domain` = Denotes the delivery domain on which an adUnitID was
+        created (for example: `PUBLISHER-d.openx.net`).
+    -   `adUnitId` = Denotes the adunit. You will create this in the
         OpenX UI.
-    -   `flexAdSize` = Denotes the ad sizes allowed for this ad unit.
-        See [Flex ads.](android-sdk-flex-ads.md)
     -   `autoRefreshDelay` = Time in seconds at which the ad needs to be
         refreshed.
     -   `autoRefreshMax` = Number of times the ad can be refreshed once
         it is displayed. By default, there is no maximum, and the ad
         will continue to refresh until the `AdView` is destroyed.
-    -   `autoDisplayOnLoad` = Set to `true` if the ad has to be shown
-        immediately. Otherwise, set to `false`.
-    -   `domain` = Denotes the delivery domain on which an adUnitID was
-        created (for example: `PUBLISHER-d.openx.net`).
+    -   `flexAdSize` = Denotes the ad sizes allowed for this ad unit.
+        See [Flex ads.](android-sdk-flex-ads.md).
 
     Example:
 
     ```xml
     <com.openx.view.plugplay.views.banner.BannerView
-        android:id="@+id/adView" 
+        android:id="@+id/adView"
         android:layout_width="320dp"
         android:layout_height="50dp"
-        adUnitID="537454411"
-        domain="PUBLISHER-d.openx.net"
-        autoDisplayOnLoad="true"
-        autoRefreshDelay="30"
-        autoRefreshMax="50"
-        flexAdSize = "320x50"
+        app:domain="PUBLISHER-d.openx.net"
+        app:adUnitId="537454411"
+        app:autoRefreshDelay="30"
+        app:autoRefreshMax="50"
+        app:flexAdSize = "320x50"
     />
-        
+
     ```
 
     Option 2: Programmatically create a banner.
@@ -112,7 +110,7 @@ Load banner ads in your app
         adContainer.addView(bannerView);
     }
     // Where LinearLayout could be any of your layouts, like ConstraintLayout, GridLayout, RelativeLayout, and so on.
-        
+
     ```
 
 2.  Load an ad.
@@ -123,16 +121,16 @@ Load banner ads in your app
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
         // TODO: Initialize or set your bannerView variable here.
-        
+
         createAd(bannerView);
     }
-                            
+
     private void createAd(BannerView bannerView) {
-     
+
         if (bannerView != null) {
-     
+
             // Set user parameters to enrich ad request data.
             UserParameters userParameters = new UserParameters();
 
@@ -140,54 +138,51 @@ Load banner ads in your app
 
             // Set userparameters on bannerView:
             bannerView.setUserParameters(userParameters);
-     
+
             // Set predefined flex ad size here.
             bannerView.setFlexAdSize(AdConfiguration.OXMAdSize.BANNER_320x50);
-     
+
             // Or, set your custom flex ad size as a string.
             // bannerView.setFlexAdSize("320x50,400x350");
-     
+
             // Set an interval at which this banner should refresh.
             bannerView.setAutoRefreshDelay(30);
-     
+
             // Set the maximum number of times the banner should refresh.
             bannerView.setAutoRefreshMax(3);
-     
-            // Auto display a banner once loaded.
-            bannerView.setAutoDisplayOnLoad(true);
-     
+
             // Set an ad event listener to get notified of the ad life cycle.
             bannerView.addAdEventListener(this);
-     
+
             // Load an ad.
             bannerView.load();
-     
+
             // Tip: call just bannerView.setAutoDisplayOnLoad(true); without bannerView.show();
             // Tip: or call bannerView.setAutoDisplayOnLoad(false); followed by bannerView.show();
-     
+
         }
-     
+
     }
     ```
 
-3.  Remember to clean up the `AdView` inside `onDestroy()`.
+3.  Remember to clean up the `BannerView` inside `onDestroy()`.
 
     ```java
     @Override
     protected void onDestroy() {
-                            
+
         super.onDestroy();
-                            
+
         if (bannerView != null) {
-                            
+
             bannerView.destroy();
             bannerView = null;
-                            
+
         }
     }
-            
+
     ```
-    
+
 For information about enriching data in the ad request, see [Parameters](android-sdk-request-params.md).
 
 Refreshing ads
@@ -215,8 +210,8 @@ OR
 ```xml
 <com.openx.view.plugplay.views.banner.BannerView
 ...
-autoRefreshDelay="30"
-autoRefreshMax="50"
+app:autoRefreshDelay="30"
+app:autoRefreshMax="50"
 ... />
 ```
 
@@ -234,29 +229,16 @@ It is recommended to have one of the below for the right behavior. Note
 that this applies only when using the OpenX SDK without any
 [adapter](android-sdk-mopub-adapter.md):
 
-**Option 1**
+Example:
 
 ``` java
-bannerView.setAutoDisplayOnLoad(true); 
-// Above is optional, as by default it is true in the SDK.
 bannerView.setAutoRefreshDelay(your_refresh_value_in_secs);
 ```
 
-Option 2
-
-```java
-bannerView.setAutoDisplayOnLoad(false); 
-// Remember to show and hide the ad with bannerView programmatically using 
-// bannerView.show() and bannerView.hide() respectively.
-```
-
-Manual banner
+Custom refresh delay
 ------------------------
 
-If you would like to control the visibility of a banner ad, you can use
-`BannerView`\'s `show()` and `hide()` methods. A manual banner generally is
-an ad that does not have refresh capability. You can disable the refresh
-on an ad unit by setting `autoRefreshDelay` to \"`0`\". Or, use
+You can disable the refresh on an ad unit by setting `autoRefreshDelay` to \"`0`\". Or, use
 `setAutoRefreshDelay(0)`.
 
 Example:
@@ -264,28 +246,14 @@ Example:
 ``` xml
 <com.openx.view.plugplay.views.banner.BannerView
     android:id="@+id/adBanner_layout_manual"
-    adUnitID="537454411"
-    autoDisplayOnLoad="false"
-    autoRefreshDelay="0"
-    domain="PUBLISHER-d.openx.net"
-    flexAdSize = "320x50"
+    app:adUnitId="537454411"
+    app:autoRefreshDelay="0"
+    app:domain="PUBLISHER-d.openx.net"
+    app:flexAdSize = "320x50"
     android:layout_width="320dp"
     android:layout_height="50dp"
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true" />
 ```
 
-`AdEventsListener` provides `adDidLoad()` when the ad is loaded. You can
-then choose to show the ad using:
-
-``` java
-bannerView.show()
-```
-
-When you want to hide the ad, call:
-
-``` java
-bannerView.hide()
-```
-
-See `AdViewManualBannerActivity.java` for an example.
+`AdEventsListener` provides `adDidLoad()` when the ad is loaded.

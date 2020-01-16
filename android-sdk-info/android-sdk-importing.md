@@ -45,9 +45,9 @@ the OpenX Mobile Android SDK into your app.
 
 6.  Change the module build.gradle file (not the project build.gradle
     file) as follows:
-    1.  Add `'com.google.android.gms:play-services-base:16.1.0'` and `'com.google.android.gms:play-services-ads-identifier:16.0.0'` (or current version) as a dependency. 
+    1.  Add `'com.google.android.gms:play-services-base:17.0.0'` and `'com.google.android.gms:play-services-ads-identifier:17.0.0'` (or current version) as a dependency.
     
-    2. Add `implementation 'com.google.android.exoplayer:exoplayer:2.7.3'` as a dependency.
+    2. Add `implementation 'com.google.android.exoplayer:exoplayer-core:2.10.4'`, `implementation 'com.google.android.exoplayer:exoplayer-ui:2.10.4'` as a dependency.
 
     3.  Add the OpenX Mobile Android SDK .aar file as a dependency.
 
@@ -55,9 +55,10 @@ the OpenX Mobile Android SDK into your app.
 
             dependencies {
                 ...
-                implementation 'com.google.android.gms:play-services-base:16.1.0'
-                implementation 'com.google.android.gms:play-services-ads-identifier:16.0.0'
-                implementation 'com.google.android.exoplayer:exoplayer:2.7.3'
+                implementation 'com.google.android.gms:play-services-base:17.0.0'
+                implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
+                implementation 'com.google.android.exoplayer:exoplayer-core:2.10.4'
+                implementation 'com.google.android.exoplayer:exoplayer-ui:2.10.4'
            
                 implementation(name: 'AndroidSDK-x.x.x', ext:'aar')
             }
