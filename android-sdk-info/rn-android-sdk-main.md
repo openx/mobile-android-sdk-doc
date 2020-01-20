@@ -10,7 +10,7 @@ Jan 14, 2020
 **Features**
 
 * Support the deeplink+. The SDK is able to manage the app-targeting campaigns.
-* Track viewable impressions. The SDK tracks impressions according to the MRC Guidelines.
+* Track [render impressions](android-sdk-impression-tracking.md). The SDK tracks impressions according to the MRC Guidelines.
 * Support CCPA.
 * Update the Transparency and Consent Framework (GDPR) to TCF v2.
 * Support Android Q.
