@@ -10,7 +10,31 @@ For requirements and integration overview, see [Getting Started](android-sdk-inf
 The current SDK version is **4.11**.
 See [release notes](android-sdk-info/rn-android-sdk-main.md) for all SDK versions.
 
-Quick download links:
+#### Gradle Integration
+
+Starting from version 4.11 the OpenX SDK is available as an AAR via GCS. To add the dependency, open your project and update the app module’s build.gradle to have the following repositories and dependencies:
+
+```
+allprojects {
+    repositories {
+      ...
+      maven { url "http://sdk.prod.gcp.openx.org/" }
+      ...
+    }
+}
+
+// ...
+
+dependencies {
+    ...
+    implementation ("com.openx:android-sdk:4.11.0@aar") {
+        transitive = true
+    }
+    ...
+}
+```
+
+#### Download SDK and demo applications
 
 - [OpenX Android SDK and Demo Application](https://sdk.prod.gcp.openx.org/android/4.11.0/OpenX_Mobile_SDK_Android_4.11.0.zip)
 - [MoPub Adapter and Demo Application](https://sdk.prod.gcp.openx.org/android/4.11.0/OpenX_Mobile_SDK_Android_MoPub_Adapter_Demo_4.11.0.zip)
