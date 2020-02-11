@@ -1,12 +1,44 @@
 Integrating the SDK with your project
 =====================================
 
-The OpenX Mobile Android SDK provides integration scenarios for banner,
-interstitial, video interstitial, and opt-in video ads. Before you
-start, you need to integrate the SDK by updating your Android manifest.
+Gradle Integration 
+------------------------------
+
+To add the dependency, open your project and update the app module’s build.gradle to have the following repositories and dependencies:
+
+```
+allprojects {
+    repositories {
+      ...
+      maven { url "http://sdk.prod.gcp.openx.org/" }
+      ...
+    }
+}
+
+// ...
+
+dependencies {
+    ...
+    implementation ("com.openx:android-sdk:4.11.0@aar") {
+        transitive = true
+    }
+    ...
+}
+```
+
+
+
+Manual Integration
+------------------------------
+
+
+1. [Download](http://sdk.prod.gcp.openx.org/android/4.11.0/OpenX_Mobile_SDK_Android_4.11.0.zips) the OpenX Mobile Android SDK zip file.
+1. [Import the SDK](android-sdk-importing.md) into your app.
 
 Updating your Android manifest
 ------------------------------
+
+Before you start, you need to integrate the SDK by updating your Android manifest.
 
 1.  Open your AndroidManifest.xml and add the following permissions and
     activity declarations according to the bundle you are integrating.
