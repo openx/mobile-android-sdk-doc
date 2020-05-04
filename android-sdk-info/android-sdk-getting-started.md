@@ -48,7 +48,7 @@ Ad Formats and Tips
 Integration process overview
 -----------------------------------------
 
-To integrate the OpenX Mobile Android SDK, complete the following steps. To explore the provided sample implementations, [download](https://sdk.prod.gcp.openx.org/android/4.11.0/OpenX_Mobile_SDK_Android_4.11.0.zip) the SDK and [launch the demo app](android-sdk-demo-app-launch.md).
+To integrate the OpenX Mobile Android SDK, complete the following steps. To explore the provided sample implementations, [download](https://sdk.prod.gcp.openx.org/android/4.12.0/OpenX_Mobile_SDK_Android_4.12.0.zip) the SDK and [launch the demo app](android-sdk-demo-app-launch.md).
 
 1.  Make sure you meet the above [requirements](#requirements).
 1.  [Integrate the SDK with your app](android-sdk-integration.md) by updating the Android manifest.
@@ -70,6 +70,7 @@ The OpenX Mobile Android SDK zip file contains the items listed below.
 | **Item**                  | **Description**                                              |
 | ------------------------- | ------------------------------------------------------------ |
 | AndroidSdk-x.x.x.aar      | The SDK .aar file.                                           |
+| omsdk-android-x.x.x.aar   | The [OpenMeasurement SDK](https://iabtechlab.com/standards/open-measurement-sdk/) .aar file.                           |
 | OpenX_Mobile_Demo_Android | A [demo app](android-sdk-demo-app-launch.md) that uses OpenX's SDK library and provides several integration scenarios. |
 | Mediation Adapters        | The [MoPub SDK adapters](android-sdk-mopub-adapter.md) and [AdMob SDK adapters](android-sdk-admob-adapter.md). |
 | docs                      | End user license agreement, readme file that directs you to this page, and integration guide for the downloaded OpenX Mobile Android SDK version. |

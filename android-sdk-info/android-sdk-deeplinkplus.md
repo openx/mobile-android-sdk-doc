@@ -42,7 +42,7 @@ deeplink+://navigate?
     &fallbackTrackingUrl=FALLBACK_TRACKER
 ```
 
-The only required parameter is **`primaryUrl`** and if it’s the only one, it would be handled as existing deeplink URLs: idle if the app is missing.
+The only required parameter is `primaryUrl` and if there are no other parameters, the deeplink+ would be handled as standard deeplink URL: doing nothing if the app is missing.
 
 The `fallbackUrl` can be any supported URI type (e.g., http, traditional deeplink) except for another Deep Link+ URL. To specify multiple tracker URLs (primary or fallback), buyers simply need to repeat the tracker key with any desired tracker URLs. The `primaryTrackingURL` is triggered if the deeplink is successful (which occurs after the user clicks).
 
@@ -66,7 +66,7 @@ The SDK will process this scheme regarding to the standard.
 
 ## Demo
 
-To inspect the behavior build and run OpenX Demo Application on the real device and try the examples:
+Check out the following examples from [Demo Application](android-sdk-demo-app-launch.md) on the real device:
 
 - **Banner with deeplink+**
 - **Video Interstitial with deeplink+**

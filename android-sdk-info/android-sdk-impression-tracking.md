@@ -11,7 +11,7 @@ Starting from 4.11 OpenX SDK tracks the impression pixel according to definition
 >
 > In the context of the guidance above, “loaded” means the logical creative file has been transmitted and received at the client-side (user device) and “render” refers to the process of painting the creative file or adding it to any portion of the Document Object Model.
 
-The impression pixel is triggered when creative appears on display, at least with 1 pixel.
+The impression pixel is triggered when creative appears on the screen, at least with 1 pixel.
 This rule is applied to all tracking pixels, which managed by OpenX SDK - display, video, Open Measurement.
 
 ## MRAID
@@ -28,3 +28,9 @@ if ( mraid.viewableChangeEventWasDetected() )
 ```
 
 Otherwise the impression tracking would be inconsistent with OpenX approach.
+
+### <img src="res/Beta-banner.png"> MRAID 3.0
+
+ For the ads which support the MRAID 3, the impression tracking code should be rather dependent on `exposureChange()` function. Since it provides much more information about the viewability of an Ad Container the impression tracking could be much more accurate and correspond to the MRC and IAB guidelines.
+
+ However, the IAB strongly recommends not to use the MRAID facilities to track impressions. The best practice is to use the **Open Measurement** framework which is supported by OpenX SDK as well.

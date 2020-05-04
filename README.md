@@ -7,7 +7,7 @@ The OpenX Mobile Android SDK allows you to integrate OpenX with your apps to inc
 
 For requirements and integration overview, see [Getting Started](android-sdk-info/android-sdk-getting-started.md).
 
-The current SDK version is **4.11**.
+The current SDK version is **4.12**.
 See [release notes](android-sdk-info/rn-android-sdk-main.md) for all SDK versions.
 
 #### Gradle Integration
@@ -27,7 +27,7 @@ allprojects {
 
 dependencies {
     ...
-    implementation ("com.openx:android-sdk:4.11.0@aar") {
+    implementation ("com.openx:android-sdk:4.12.0@aar") {
         transitive = true
     }
     ...
@@ -36,9 +36,9 @@ dependencies {
 
 #### Download SDK and demo applications
 
-- [OpenX Android SDK and Demo Application](https://sdk.prod.gcp.openx.org/android/4.11.0/OpenX_Mobile_SDK_Android_4.11.0.zip)
-- [MoPub Adapter and Demo Application](https://sdk.prod.gcp.openx.org/android/4.11.0/OpenX_Mobile_SDK_Android_MoPub_Adapter_Demo_4.11.0.zip)
-- [AdMob Adapter and Demo Application](https://sdk.prod.gcp.openx.org/android/4.11.0/OpenX_Mobile_SDK_Android_AdMob_Adapter_Demo_4.11.0.zip)
+- [OpenX Android SDK and Demo Application](https://sdk.prod.gcp.openx.org/android/4.12.0/OpenX_Mobile_SDK_Android_4.12.0.zip)
+- [MoPub Adapter and Demo Application](https://sdk.prod.gcp.openx.org/android/4.12.0/OpenX_Mobile_SDK_Android_MoPub_Adapter_Demo_4.12.0.zip)
+- [AdMob Adapter and Demo Application](https://sdk.prod.gcp.openx.org/android/4.12.0/OpenX_Mobile_SDK_Android_AdMob_Adapter_Demo_4.12.0.zip)
 
 ## Android SDK Overview
 
@@ -50,6 +50,7 @@ The following are some of the key capabilities of the SDK.
     -   [Banner](android-sdk-info/android-sdk-banner-integration.md)
     -   [Interstitial](android-sdk-info/android-sdk-interstitial-integration.md)
     -   Rich media and MRAID 2.0 support
+    -   <img src="android-sdk-info/res/Beta-banner.png"> MRAID 3.0 support
     -   [Video interstitial](android-sdk-info/android-sdk-video-interstitial-integration.md)
     -   [Flex ads](android-sdk-info/android-sdk-flex-ads.md)
     -   [Opt-in video](android-sdk-info/android-sdk-video-optin-integration.md). If you would like to participate in the opt-in video beta, contact OpenX.

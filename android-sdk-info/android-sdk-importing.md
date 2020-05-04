@@ -20,8 +20,7 @@ the OpenX Mobile Android SDK into your app.
     ![Android SDK libs
     folder](res/android-importing-libs.png "Android SDK libs folder")
 
-4.  Copy AndroidSDK-X.X.X.aar from the extracted
-    OpenX\_Mobile\_SDK\_Android folder into **libs**.
+4.  Copy AndroidSDK-X.X.X.aar and omsdk-android-X.X.X.aar from the extracted OpenX\_Mobile\_SDK\_Android folder into **libs**.
 
     ![Android SDK copied to
     libs](res/android-importing-libs2.png "Android SDK copied to libs")
@@ -49,7 +48,7 @@ the OpenX Mobile Android SDK into your app.
     
     2. Add `implementation 'com.google.android.exoplayer:exoplayer-core:2.10.4'`, `implementation 'com.google.android.exoplayer:exoplayer-ui:2.10.4'` as a dependency.
 
-    3.  Add the OpenX Mobile Android SDK .aar file as a dependency.
+    3.  Add the OpenX Mobile Android SDK .aar and OpenMeasurement SDK .aar file as a dependency.
 
         **build.gradle (Module: app)**
 
@@ -61,6 +60,7 @@ the OpenX Mobile Android SDK into your app.
                 implementation 'com.google.android.exoplayer:exoplayer-ui:2.10.4'
            
                 implementation(name: 'AndroidSDK-x.x.x', ext:'aar')
+                implementation(name: 'omsdk-android-x.x.x', ext:'aar')
             }
                         
 
