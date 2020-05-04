@@ -72,13 +72,14 @@ parameters.
 OXSettings
 -------------------------------------------
 
-  | **Field**               | **Description**                                              | **Default** |
-  | ----------------------- | ------------------------------------------------------------ | ----------- |
-  | defaultDomain           | Controls the initial value of `domain` for all newly created `BannerView, InterstitialView and VideoAdView`. Useful if the same domain is in use throughout your app. | Null        |
-  | defaultAdUnitId         | Controls the initial value of `adUnitID` for all newly created `BannerView, InterstitialView and VideoAdView`. Useful if the same domain is in use throughout your app. | Null        |
-  | defaultAutoRefreshDelay | Controls the initial value of `autoRefreshDelay` for all newly created OXMAdViews in seconds. | 60          |
-  | logLevel                | Controls the type of messages of the internal logger. Options are:<br />- DEBUG - this is the noisiest level.<br />- ERROR<br />- WARN<br />- NONE | NONE        |
-  | sendMRAIDSupportParams  | If `true`, the SDK sends "`af=3,5`", indicating support for MRAID. | true        |
+| **Field**               | **Description**                                              | **Default** |
+| ----------------------- | ------------------------------------------------------------ | ----------- |
+| defaultDomain           | Controls the initial value of `domain` for all newly created `BannerView, InterstitialView and VideoAdView`. Useful if the same domain is in use throughout your app. | Null        |
+| defaultAdUnitId         | Controls the initial value of `adUnitID` for all newly created `BannerView, InterstitialView and VideoAdView`. Useful if the same domain is in use throughout your app. | Null        |
+| defaultAutoRefreshDelay | Controls the initial value of `autoRefreshDelay` for all newly created OXMAdViews in seconds. | 60          |
+| logLevel                | Controls the type of messages of the internal logger. Options are:<br />- DEBUG - this is the noisiest level.<br />- ERROR<br />- WARN<br />- NONE | NONE        |
+| sendMRAIDSupportParams  | If `true`, the SDK sends "`af=3,5`", indicating support for MRAID. | true        |
+| <img src="res/Beta-banner.png"> sendMRAID3SupportParams                | If `true`, the SDK sends "`af=3,5,6`", indicating support for MRAID 3. **Note:** this flag will make effect only if sendMRAIDSupportParams is **true**. | false        |
 
 The code sample:
 

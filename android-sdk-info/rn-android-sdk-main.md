@@ -1,6 +1,22 @@
 OpenX Mobile Android SDK Release Notes
 ======================================
 
+Version 4.12
+-----------
+
+ May 4, 2020
+
+ **Features**
+
+ * Update the Open Measurement SDK to version **1.3**. 
+ * <img src="res/Beta-banner.png"> **MRAID 3** support. To enable it you need to set the `sendMRAID3SupportParams` property in the [OXSettings](android-sdk-request-params.md#OXSettings) to **true**.
+
+ **Changes and Improvements**
+
+ * Renew the IAB certification for the Open Measurement framework.
+ * New internal viewability measurement component that works according to the MRC and IAB guidances. 
+ * Minor improvements and fixes 
+ 
 
 Version 4.11
 -------------
