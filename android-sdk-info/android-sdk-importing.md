@@ -20,8 +20,7 @@ the OpenX Mobile Android SDK into your app.
     ![Android SDK libs
     folder](res/android-importing-libs.png "Android SDK libs folder")
 
-4.  Copy AndroidSDK-X.X.X.aar from and omsdk-android-X.X.X.aar the extracted
-    OpenX\_Mobile\_SDK\_Android folder into **libs**.
+4.  Copy AndroidSDK-X.X.X.aar and omsdk-android-X.X.X.aar from the extracted OpenX\_Mobile\_SDK\_Android folder into **libs**.
 
     ![Android SDK copied to
     libs](res/android-importing-libs2.png "Android SDK copied to libs")
