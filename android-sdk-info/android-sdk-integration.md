@@ -19,7 +19,7 @@ allprojects {
 
 dependencies {
     ...
-    implementation ("com.openx:android-sdk:4.12.0@aar") {
+    implementation ("com.openx:android-sdk:4.13.0@aar") {
         transitive = true
     }
     ...
@@ -32,7 +32,7 @@ Manual Integration
 ------------------------------
 
 
-1. [Download](http://sdk.prod.gcp.openx.org/android/4.12.0/OpenX_Mobile_SDK_Android_4.12.0.zip) the OpenX Mobile Android SDK zip file.
+1. [Download](http://sdk.prod.gcp.openx.org/android/4.13.0/OpenX_Mobile_SDK_Android_4.13.0.zip) the OpenX Mobile Android SDK zip file.
 1. [Import the SDK](android-sdk-importing.md) into your app.
 
 Updating your Android manifest
