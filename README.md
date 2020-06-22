@@ -7,7 +7,7 @@ The OpenX Mobile Android SDK allows you to integrate OpenX with your apps to inc
 
 For requirements and integration overview, see [Getting Started](android-sdk-info/android-sdk-getting-started.md).
 
-The current SDK version is **4.12**.
+The current SDK version is **4.13**.
 See [release notes](android-sdk-info/rn-android-sdk-main.md) for all SDK versions.
 
 #### Gradle Integration
@@ -25,9 +25,9 @@ allprojects {
 
 // ...
 
-dependencies {
+dependencies {xf
     ...
-    implementation ("com.openx:android-sdk:4.12.0@aar") {
+    implementation ("com.openx:android-sdk:4.13.0@aar") {
         transitive = true
     }
     ...
@@ -36,9 +36,10 @@ dependencies {
 
 #### Download SDK and demo applications
 
-- [OpenX Android SDK and Demo Application](https://sdk.prod.gcp.openx.org/android/4.12.0/OpenX_Mobile_SDK_Android_4.12.0.zip)
-- [MoPub Adapter and Demo Application](https://sdk.prod.gcp.openx.org/android/4.12.0/OpenX_Mobile_SDK_Android_MoPub_Adapter_Demo_4.12.0.zip)
-- [AdMob Adapter and Demo Application](https://sdk.prod.gcp.openx.org/android/4.12.0/OpenX_Mobile_SDK_Android_AdMob_Adapter_Demo_4.12.0.zip)
+
+- [OpenX Android SDK and Demo Application](https://sdk.prod.gcp.openx.org/android/4.13.0/OpenX_Mobile_SDK_Android_4.13.0.zip)
+- [MoPub Adapter and Demo Application](https://sdk.prod.gcp.openx.org/android/4.13.0/OpenX_Mobile_SDK_Android_MoPub_Adapter_Demo_4.13.0.zip)
+- [AdMob Adapter and Demo Application](https://sdk.prod.gcp.openx.org/android/4.13.0/OpenX_Mobile_SDK_Android_AdMob_Adapter_Demo_4.13.0.zip)
 
 ## Android SDK Overview
 

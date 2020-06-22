@@ -48,7 +48,7 @@ Ad Formats and Tips
 Integration process overview
 -----------------------------------------
 
-To integrate the OpenX Mobile Android SDK, complete the following steps. To explore the provided sample implementations, [download](https://sdk.prod.gcp.openx.org/android/4.12.0/OpenX_Mobile_SDK_Android_4.12.0.zip) the SDK and [launch the demo app](android-sdk-demo-app-launch.md).
+To integrate the OpenX Mobile Android SDK, complete the following steps. To explore the provided sample implementations, [download](https://sdk.prod.gcp.openx.org/android/4.13.0/OpenX_Mobile_SDK_Android_4.13.0.zip) the SDK and [launch the demo app](android-sdk-demo-app-launch.md).
 
 1.  Make sure you meet the above [requirements](#requirements).
 1.  [Integrate the SDK with your app](android-sdk-integration.md) by updating the Android manifest.
