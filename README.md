@@ -25,7 +25,7 @@ allprojects {
 
 // ...
 
-dependencies {xf
+dependencies {
     ...
     implementation ("com.openx:android-sdk:4.13.0@aar") {
         transitive = true
