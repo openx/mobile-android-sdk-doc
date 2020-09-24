@@ -69,7 +69,7 @@ The OpenX Mobile Android SDK zip file contains the items listed below.
 
 | **Item**                  | **Description**                                              |
 | ------------------------- | ------------------------------------------------------------ |
-| AndroidSdk-x.x.x.aar      | The SDK .aar file.                                           |
+| OpenXApolloSDK-x.x.x.aar      | The SDK .aar file.                                           |
 | omsdk-android-x.x.x.aar   | The [OpenMeasurement SDK](https://iabtechlab.com/standards/open-measurement-sdk/) .aar file.                           |
 | OpenX_Mobile_Demo_Android | A [demo app](android-sdk-demo-app-launch.md) that uses OpenX's SDK library and provides several integration scenarios. |
 | Mediation Adapters        | The [MoPub SDK adapters](android-sdk-mopub-adapter.md) and [AdMob SDK adapters](android-sdk-admob-adapter.md). |

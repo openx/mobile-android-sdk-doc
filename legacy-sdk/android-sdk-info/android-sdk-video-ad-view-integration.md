@@ -79,7 +79,7 @@ Load 300x250 video ads in your app
     Example:
 
     ```xml
-    <com.openx.view.plugplay.views.video.views.VideoAdView
+    <com.openx.apollo.views.video.views.VideoAdView
         android:id="@+id/adView" 
         android:layout_width="300dp"
         android:layout_height="250dp"

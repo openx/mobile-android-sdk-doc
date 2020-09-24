@@ -1,15 +1,15 @@
 OpenX Mobile Android SDK Release Notes
 ======================================
-
 Version 4.13
 -----------
 
 Jun 22, 2020
 
 
-* Update the Open Measurement SDK to version **1.3.5**. 
+* Update the Open Measurement SDK to version **1.3.5**.
 * More precise support of **MRAID 3**.
 * Minor improvements and fixes.
+
 
 Version 4.12
 -----------
