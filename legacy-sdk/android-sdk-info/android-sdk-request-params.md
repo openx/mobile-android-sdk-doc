@@ -6,14 +6,14 @@ The more actual info about the user, the app, and the device you provide the mor
 Please strictly follow the recommendations in the below tables and provide all ❗ **Required** and **Highly Recommended** values.
 
 
-1. [UserParameters](#userparameters)
+1. [Targeting](#targeting)
 2. [OXSettings](#oxsettings)
 3. [BannerView](#bannerview)
 4. [InterstitialView](#interstitialview)
 5. [InterstitialDisplayProperties](#interstitialdisplayproperties)
 
-UserParameters
-------------------------------------------------------
+Targeting
+--------------
 | **Parameter**              | **Method**                | Description                                                  | Required?|
 | -------------------------- | ------------------------- | ------------------------------------------------------------ | -------- |
 | age                        | `setUserAge`              | Age of the user in years. For example: `35`   | ❗ Highly Recommended  |
@@ -25,7 +25,7 @@ UserParameters
 | ext                        | `setUserExt`              | Placeholder for exchange-specific extensions to OpenRTB. | Optional |
 | gen                        | `setUserGender`           | The gender of the user (Male, Female, Other, Unknown). For example: `OXMGender.FEMALE`  | ❗ Highly Recommended |
 | inc                        | `setUserAnnualIncomeInUs` | Annual income of the user in US dollars. For example: `55000`| ❗ Highly Recommended  |
-| ip                         | `setIpAddress`            | The IP address of the carrier gateway. If this is not present, OpenX retrieves it from the request header. For example: `"192.168.0.1"` | ❗ Highly Recommended |
+| ip                         | `setDeviceIpAddress`            | The IP address of the carrier gateway. If this is not present, OpenX retrieves it from the request header. For example: `"192.168.0.1"` | ❗ Highly Recommended |
 | keywords                   | `setUserKeywords`         | Comma separated list of keywords, interests, or intent. | Optional |
 | lat, lon                   | `setUserLatLng`           | Location of the user’s home base defined by a provided longitude and latitude. It's highly recommended to provide Geo data to improve the request.| Optional |
 | mar                        | `setUserMaritalStatus`    | The marital status of the user (Single, Married, Divorced, Unknown). For example: `OXMMaritalStatus.DIVORCED` | Recommended if available  |
@@ -35,33 +35,26 @@ UserParameters
 
 ### How to set user parameters
 
-You can use `UserParameters` to pass ad call request parameters.
-
-You can manually set custom parameters using
-`setUserParameters()` on `AdView` and send it through the
-corresponding `load()`.
+You can use `Targeting` to pass ad call request parameters.
 
 ``` java
 // Set user parameters to enrich ad request data.
-// Please see UserParameters for the userKeys and the APIs available.
-UserParameters userParameters = new UserParameters();
-userParameters.setUserKeywords("socialNetworking");
-userParameters.setUserAge(18);
-userParameters.setUserAnnualIncomeInUs(50000);
+// Please see Targeting for the userKeys and the APIs available.
+Targeting.setUserKeywords("socialNetworking");
+Targeting.setUserAge(18);
+Targeting.setUserAnnualIncomeInUs(50000);
  
 // Set parameters.
-// userParameters.setCustomParameters(Hashtable<String, String> params)
-// userParameters.setParameters(Hashtable<String, String> params)
+// Targeting.setCustomParameters(Hashtable<String, String> params)
+// Targeting.setParameters(Hashtable<String, String> params)
 // clear parameters
-// userParameters.clearParameters()
-// userParameters.clearParameter(String key)
- 
-adView.setUserParameters(userParameters);
+// Targeting.clearParameters()
+// Targeting.clearParameter(String key)
 ```
 
 ### Custom key-value parameters
 
-You can submit values through `UserParameters` for the extended (`c.xxx`) ad-call
+You can submit values through `Targeting` for the extended (`c.xxx`) ad-call
 parameters.
 
 | **Parameter**           | **Method**          | **Description**                                              |
@@ -96,7 +89,6 @@ BannerView
 | adUnitID                   | View constructor                                                    | OpenX ad unit ID. For example: `"123456789"`            | Required |
 | domain                     | View constructor                                                    | Your app's OpenX delivery domain, provided to you by OpenX. For example: `"PUBLISHER-d.openx.net"` | Required |
 | adEventListener            | addAdEventListener | [Event listener](android-sdk-controller-callbacks.md) for the `BannerView`. Typically a `BannerViewListener`. | Recommended                                                |
-| userParameters             | setUserParameters | Data structure containing [properties](android-sdk-request-params.md#userparameters) for enriching requests with user data. | Recommended                                                  |
 | flexAdSize                 | setFlexAdSize                                                    | Allows multiple ad sizes for an ad unit (flex ads) which allows for better monetization. See [Flex ads](android-sdk-flex-ads.md). | Recommended                     |
 | autoRefreshDelay           | setAutoRefreshDelay                                               | Amount of time in seconds between refreshes. This value will be overwritten with any values received from the server. Prevent an auto-refresh by using a value of `0` or less. | Optional   <br />Default is `60`                                                  |
 | autoRefreshMax             | setAutoRefreshMax                                                  | Maximum number of times the `BannerView`should refresh. This value will be overwritten with any values received from the server. Using a value of 0 indicates there is no maximum. | Optional                                                      <br />Default is `0`|
@@ -104,10 +96,6 @@ BannerView
 The code sample:
 ```java
 BannerView bannerView = new BannerView(this, "PUBLISHER-d.openx.net", "537454411");
-
-UserParameters userParameters = new UserParameters();
-userParameters.setCustomParameter("name", "OpenXDemoApp");
-bannerView.setUserParameters(userParameters);
 
 bannerView.setFlexAdSize(AdConfiguration.OXMAdSize.BANNER_320x50);
 
@@ -128,7 +116,6 @@ InterstitialView
 | delegate                      | addAdEventListener | [Event listener](android-sdk-controller-callbacks.md) for the `InterstitialView`. Typically a `InterstitialViewListener`. | Recommended                                                 |
 | interstitialDisplayProperties | [interstitialDisplayProperties](#interstitialdisplayproperties) | Data structure containing [properties](#interstitialdisplayproperties) for displaying interstitials. | Recommended                      |
 | interstitialVideoProperties   | setInterstitialVideoProperties | Data structure containing properties for displaying video interstitials. | Recommended                       |
-| userParameters                | setUserParameters | Data structure containing [properties](#userparameters) for enriching requests with user data. | Required                                                  |
 | flexAdSize                    | setFlexAdSize                                                     | Allows multiple ad sizes for an ad unit (flex ads) which allows for better monetization. See [Flex ads](android-sdk-flex-ads.md). | Recommended                      |
 | isRewarded                    | setRewardedFlag                                                        | Sets a video interstitial ad unit as an opt-in video. | Required for [opt-in interstitial video](android-sdk-video-optin-integration.md) (rewarded video) ad units |
 

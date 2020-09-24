@@ -67,7 +67,7 @@ Before you start, you need to integrate the SDK by updating your Android manifes
 
     ``` xml
      <activity
-        android:name="com.openx.view.plugplay.views.browser.AdBrowserActivity"
+        android:name="com.openx.apollo.views.browser.AdBrowserActivity"
         android:configChanges="orientation|screenSize|keyboardHidden"
         android:theme="@android:style/Theme.Translucent.NoTitleBar"
         android:windowSoftInputMode="adjustPan|stateHidden"

@@ -78,7 +78,7 @@ Load banner ads in your app
     Example:
 
     ```xml
-    <com.openx.view.plugplay.views.banner.BannerView
+    <com.openx.apollo.views.banner.BannerView
         android:id="@+id/adView"
         android:layout_width="320dp"
         android:layout_height="50dp"
@@ -208,7 +208,7 @@ bannerView.setAutoRefreshMax(50);
 ```                
 OR
 ```xml
-<com.openx.view.plugplay.views.banner.BannerView
+<com.openx.apollo.views.banner.BannerView
 ...
 app:autoRefreshDelay="30"
 app:autoRefreshMax="50"
@@ -244,7 +244,7 @@ You can disable the refresh on an ad unit by setting `autoRefreshDelay` to \"`0`
 Example:
 
 ``` xml
-<com.openx.view.plugplay.views.banner.BannerView
+<com.openx.apollo.views.banner.BannerView
     android:id="@+id/adBanner_layout_manual"
     app:adUnitId="537454411"
     app:autoRefreshDelay="0"
