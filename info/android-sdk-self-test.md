@@ -8,13 +8,13 @@ your implementation.
 debugging proxy](#using-charles-web-proxy) such as Charles Web Proxy. You may need to
 provide logs to OpenX.
 
-General testing requirements
+General Testing Requirements
 ----------------------------------------
 
 Please make sure that you:
 
 -   Have a good communications connection on the device, such as
-    reliable wireless network signal. If you can\'t reproduce the
+    reliable wireless network signal. If you can't reproduce the
     problem, it could be a communications issue.
 -   Have a valid user agent if you are expecting live ads through the
     OpenX Ad Exchange. Testing with a real device that does not have ad
@@ -81,7 +81,7 @@ below.
   | No impression or no click tracking recorded.                 |                                                              | Request resolution assistance through the [OpenX Support Community](https://community.openx.com/s/). |
 
 
-Ad exception types and examples
+Ad Exception Types and Examples
 --------------------------------------
 
 Exceptions can inform you of configuration issues or possible issues
