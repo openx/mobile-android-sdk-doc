@@ -29,7 +29,7 @@ The OpenX In-App Bidding SDK supports next premium ad formats:
 
 ## Apollo Setup
 
-To start running a header bidding auction you need to register on the Apollo server and create configurations for ad units and demand partners. See the [setup instructions]() for details.
+To start running a header bidding auction you need to register on the Apollo server and create configurations for ad units and demand partners. Visit the [Apollo site](https://www.openx.com/prebid/) for details.
 
 Before the integration of the In-App Bidding SDK you should have:
 
