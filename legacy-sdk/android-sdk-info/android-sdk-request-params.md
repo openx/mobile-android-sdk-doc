@@ -21,7 +21,6 @@ Targeting
 | crr                        | `setCarrier`              |  Mobile carrier - Defined by the Mobile Country Code (MCC) and Mobile Network Code (MNC), using the format: <MCC>-<MNC>. For example: `"310-410"` | Optional |
 | customdata                 | `setUserCustomData`       | Optional feature to pass bidder data that was set in the exchange’s cookie. The string must be in base85 cookie safe characters and be in any format. Proper JSON encoding must be used to include “escaped” quotation marks. | Optional |
 | dma                        | `setDma`                  | A designated market are. For US locations, indicates the end-user's Designated Market Area. For example: dma=803. | Optional |
-| eth                        | `setUserEthnicity`        | Ethnicity of the user (African American, Asian, Hispanic, White, Other). For example: `OXMEthnicity.ASIAN` | Recommended if available |
 | ext                        | `setUserExt`              | Placeholder for exchange-specific extensions to OpenRTB. | Optional |
 | gen                        | `setUserGender`           | The gender of the user (Male, Female, Other, Unknown). For example: `OXMGender.FEMALE`  | ❗ Highly Recommended |
 | inc                        | `setUserAnnualIncomeInUs` | Annual income of the user in US dollars. For example: `55000`| ❗ Highly Recommended  |
