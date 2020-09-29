@@ -1,7 +1,7 @@
 # In-App Bidding Listeners
 
 
-The tables below list the listener methods that In-App Bidding SDK supports for banner, interstitial and rewarded ads in **Google Ad Manager** and **Pure In-App Bidding** facades.
+The tables below list the listener methods that the In-App Bidding SDK supports for banner, interstitial, and rewarded ads in the **Google Ad Manager** and **Pure In-App Bidding** facades.
 
 ## BannerViewListener interface
 
@@ -36,4 +36,3 @@ The tables below list the listener methods that In-App Bidding SDK supports for 
 | `onAdDisplayed`                    | Called when the interstitial view is displayed.|
 | `onAdClosed`                     | Called when the interstitial is closed. |
 | `onAdClicked`                       | A user clicks an ad, an in-app browser is opened. |
-

@@ -1,6 +1,6 @@
 # OpenX Apollo Android SDK
 
-The OpenX Apollo Android SDK allows you to integrate  into your apps prebid solution hosted by OpenX to increase revenue through mobile advertising.
+The OpenX Apollo Android SDK allows you to integrate into your apps the Prebid solution hosted by OpenX to increase revenue through mobile advertising.
 
 > **_NOTE:_**  The documentation for the legacy OpenX SDK is available [here](legacy-sdk/README.md).
 
@@ -72,4 +72,4 @@ Here are key capabilities of the Android In-App Bidding SDK:
 
 ## Contact Us
 
-If you have any questions or need help, go to [OpenX Support](https://docs.openx.com/Content/support.html).
+If you have any questions or need help, go to [OpenX Support](https://docs.openx.com/resources/support/).

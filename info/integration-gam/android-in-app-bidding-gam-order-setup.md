@@ -2,17 +2,17 @@
 
 ## Overview
 
-The sense of prebid technology is to run the header bidding auction first and inject an opportunity to display a winning bid into a preconfigured waterfall on the Primary Ad Server. This could be achieved by adding special Line Items which point to the prebid creative. If such line item wins on the primary ad server the prebid ad will be rendered on the client, otherwise, the ad from the predefined waterfall will be rendered.
+The sense of Prebid technology is to run the header bidding auction first and inject an opportunity to display a winning bid into a preconfigured waterfall on the Primary Ad Server. This could be achieved by adding special Line Items which point to the Prebid creative. If such line item wins on the Primary Ad Server the Prebid ad will be rendered on the client, otherwise, the ad from the predefined waterfall will be rendered.
 
 This scenario is totally supported by Apollo.
 
-So the essential part of Apollo integration is creating a special Line Items on the Google Ad Manager.  
+So the essential part of the Apollo integration is creating a special Line Items on the Google Ad Manager.  
 
-## Best Practises 
+## Best Practices
 
-According to prebid's suggestions, you have to create a set of line items with unique price targets to get the best revenue. Line Items should be created according to the [price granularity](http://prebid.org/prebid-mobile/adops-price-granularity.html#autoGranularityBucket) policy. That means that you have to create more than one hundred line items to get the best coverage.
+According to Prebid's suggestions, you have to create a set of line items with unique price targets to get the best revenue. Line Items should be created according to the [price granularity](http://prebid.org/prebid-mobile/adops-price-granularity.html#autoGranularityBucket) policy. That means that you have to create more than one hundred line items to get the best coverage.
 
-You can do it by your hands, develop special scripts, or using some tool for generating orders like [PubMonkey](https://chrome.google.com/webstore/detail/pubmonkey/cjbdhopmleoleednpeaknmmbepfkhaml?hl=en)
+You can either do this manually, develop special scripts, or use some tool to generate orders like [PubMonkey](https://chrome.google.com/webstore/detail/pubmonkey/cjbdhopmleoleednpeaknmmbepfkhaml?hl=en).
 
 ## Order Setup
 
@@ -30,7 +30,7 @@ Regardless of the ability to name a Line Item in any way we strongly suggest usi
 
 #### Line Item Type
 
-Create a Line Item depending on the type of expected creative kind.
+Create a Line Item depending on the type of expected creative type.
 
 <img src="../res/orders/order-gam-li-create.png" alt="Pipeline Screenshot" align="center">
 
@@ -42,19 +42,19 @@ The Line Item price should be chosen according to the price granularity policy.
 
 #### Line Item Targeting
 
-The **Custom targeting** property should contain a special keyword with the price of winning bid. The same as a Rate of the Line Item.
+The **Custom targeting** property should contain a special keyword with the price of the winning bid. The same as a Rate of the Line Item.
 
 <img src="../res/orders/order-gam-li-targeting.png" alt="Pipeline Screenshot" align="center">
 
 
-### Creative 
+### Creative
 
-The In-App Bidding SDK renders the Apollo's bid when GAM SDK receives a creative with special meta information.  
+The In-App Bidding SDK renders the Apollo's bid when the GAM SDK receives a creative with special meta information.  
 
 #### Display Banner, Display Interstitial, Video Interstitial, Outstream Video.
 
 
-The In-App Bidding Facade for GAM is based on [App Events](https://developers.google.com/ad-manager/mobile-ads-sdk/android/banner#app_events) feature almost for all kinds of ads. That means that creative should contain a special tag that will be processed by GAM Event Handlers.
+The In-App Bidding Facade for GAM is based on the [App Events](https://developers.google.com/ad-manager/mobile-ads-sdk/android/banner#app_events) feature almost for all kinds of ads. That means that the creative should contain a special tag that will be processed by GAM Event Handlers.
 
 ``` js
 <script type="text/javascript" src="https://media.admob.com/api/v1/google_mobile_app_ads.js">
@@ -67,7 +67,7 @@ The In-App Bidding Facade for GAM is based on [App Events](https://developers.go
 
 #### Rewarded Video
 
-In-App Bidding facade for Rewarded video ads is based on [OnAdMetadataChangedListener](https://developers.google.com/android/reference/com/google/android/gms/ads/rewarded/OnAdMetadataChangedListener). So you need to set up a special VAST tag in the creative.
+The In-App Bidding facade for Rewarded video ads is based on [OnAdMetadataChangedListener](https://developers.google.com/android/reference/com/google/android/gms/ads/rewarded/OnAdMetadataChangedListener). So you need to set up a special VAST tag in the creative.
 
 ``` js
 https://sdk.prod.gcp.openx.org/ads/inapp_bidding/gam_rewarded.xml
@@ -78,11 +78,11 @@ https://sdk.prod.gcp.openx.org/ads/inapp_bidding/gam_rewarded.xml
 ### Automatic
 
 
-In order to implement proper [price granularity](http://prebid.org/prebid-mobile/adops-price-granularity.html#autoGranularityBucket) you have to create more than a hundred of Line items. You can do it manually or using free Chrome extension [PubMonkey](https://chrome.google.com/webstore/detail/pubmonkey/cjbdhopmleoleednpeaknmmbepfkhaml?hl=en). 
+In order to implement proper [price granularity](http://Prebid.org/Prebid-mobile/adops-price-granularity.html#autoGranularityBucket) you have to create more than a hundred Line items. You can do this manually or by using the free Chrome extension [PubMonkey](https://chrome.google.com/webstore/detail/pubmonkey/cjbdhopmleoleednpeaknmmbepfkhaml?hl=en).
 
 #### Setup Order Properties
 
-To generate an Order just need to set generic parameters and custom creative code:
+To generate an Order you just need to set generic parameters and custom creative code:
 
 <img src="../res/orders/order-gam-pubmonkey-form.png" alt="Pipeline Screenshot" align="center">
 
@@ -92,5 +92,3 @@ To generate an Order just need to set generic parameters and custom creative cod
 After a few minutes the Order with **170 Line Items** is ready to work:
 
 <img src="../res/orders/order-gam-pubmonkey-result.png" alt="Pipeline Screenshot" align="center">
-
-
