@@ -1,6 +1,6 @@
 # OpenX Apollo Android SDK
 
-The OpenX Apollo Android SDK allows you to integrate into your apps the Prebid solution hosted by OpenX to increase revenue through mobile advertising.
+The OpenX Apollo Android SDK allows you to integrate  into your apps prebid solution hosted by OpenX to increase revenue through mobile advertising.
 
 > **_NOTE:_**  The documentation for the legacy OpenX SDK is available [here](legacy-sdk/README.md).
 
@@ -8,7 +8,7 @@ The OpenX Apollo Android SDK allows you to integrate into your apps the Prebid s
 
 For requirements and integration overview, see [Getting Started](info/android-in-app-bidding-getting-started.md).
 
-The current SDK version is **1.0.0**.
+The current SDK version is **1.1.0**.
 Go to [release notes](info/android-in-app-bidding-release-notes.md) for all SDK versions.
 
 #### Gradle Integration
@@ -46,7 +46,7 @@ Here are key capabilities of the Android In-App Bidding SDK:
 -   **Integration Scenarios**
     - [Google Ad Manager](info/integration-gam/android-in-app-bidding-gam-info.md)
     - [MoPub](info/integration-mopub/android-in-app-bidding-mopub-info.md)
-    - [Pure In-App Bidding](info/integration-pb/android-in-app-bidding-pb-info.md)
+    - [Pure In-App Bidding](info/integration-apollo/android-in-app-bidding-pb-info.md)
 
 
 <img src="info/res/IAB_Cert.png" alt="Pipeline Screenshot" height="320" width="320" align="right">
@@ -55,6 +55,7 @@ Here are key capabilities of the Android In-App Bidding SDK:
 -   **Support of these premium ad formats:**
     -   Banner
     -   Interstitial
+    -   [**NEW**] [Native](info/android-in-app-bidding-native-guidelines-info.md) 
     -   Rich media and MRAID 3.0 support
     -   Video Interstitial
     -   Rewarded Video
@@ -72,4 +73,4 @@ Here are key capabilities of the Android In-App Bidding SDK:
 
 ## Contact Us
 
-If you have any questions or need help, go to [OpenX Support](https://docs.openx.com/resources/support/).
+If you have any questions or need help, go to [OpenX Support](https://docs.openx.com/Content/support.html).

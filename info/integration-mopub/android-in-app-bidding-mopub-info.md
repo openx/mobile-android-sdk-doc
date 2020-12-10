@@ -2,8 +2,8 @@
 
 ## Table of Contents
 
-1. [SDKs Integration](#mopub-sdk-integration)
-2. [Order Setup](#order-setup)
+1. [SDKs integration](#mopub-sdk-integration)
+2. [Order setup](#order-setup)
 3. [Mobile API](#mobile-api)
     - [Init SDK](#init-the-in-app-bidding-sdk)
     - [Banner](#banner-api)
@@ -13,53 +13,53 @@
 
 ## MoPub SDK Integration
 
-The prerequisite of the In-App Bidding integration with MoPub is an installed MoPub SDK. If you do not have the MoPub SDK in the app yet, refer to the [MoPub's Documentation](https://github.com/mopub/mopub-android-sdk) for the integration process. The In-App Bidding SDK was tested with MoPub SDK 5.13.0. If you have any troubles with this or other versions, please contact the [OpenX Support](https://docs.openx.com/resources/support/).
+The prerequisite of In-App Bidding integration with MoPub is an installed MoPub SDK. If you do not have MoPub SDK in the app yet, refer to the [MoPub's Documentation](https://github.com/mopub/mopub-android-sdk) for the integration process. The In-App Bidding SDK was tested with MoPub SDK 5.13.0. If you have any troubles with this or other versions, please, contact the [OpenX Support](https://docs.openx.com/Content/support.html).
 
 
-## Order Setup
+## Order Setup 
 
-To integrate header bidding into MoPub you have to prepare a specific Order following the [instructions](android-in-app-bidding-mopub-order-setup.md) for particular ad type.
+To integrate header bidding into MoPub you have to prepare a specific Order following the [instructions](android-in-app-bidding-mopub-order-setup.md) for particular ad kind.
 
 ## Mobile API
 
-The integration of header bidding into MoPub monetization is based on MoPub's Mediation feature.
+The integration of header bidding into MoPub monetization is based on MoPub's Mediation feature. 
 
 <img src="../res/MoPub-In-App-Bidding-Overview.png" alt="Pipeline Screenshot" align="center">
 
 
-The OpenX In-App Bidding SDK provides the ability to integrate header bidding for the following ad types:
+OpenX In-App Bidding SDK provides ability to integrate header bidding for these ad kinds:
 
 - Display Banner
 - Display Interstitial
-- Video Interstitial
+- Video Interstitial 
 - Rewarded Video
+- [Native Styles](../integration-mopub/android-in-app-bidding-mopub-native-integration.md)
 
-However, the In-App Bidding facade for MoPub provides only three types of API classes for these ads:
+However, In-App Bidding facade for MoPub provides only three types of API classes for these ads:
 
-- **Banner API** - for **Display Banner**
+- **Banner API** - for **Display Banner** 
 - **Interstitial API** - for **Display** and **Video** Interstitials
 - **Rewarded API** - for **Rewarded Video**
 
-For how to create an Apollo account and start using the Apollo SDK, see the [Getting Started](../android-in-app-bidding-getting-started.md) page first.
+How to create an Apollo account and start to use the Apollo SDK, see at [Getting Started](../android-in-app-bidding-getting-started.md) page first.
 
 ### Init the In-App Bidding SDK
 
-To start running bid requests you have to provide an Account Id for your organization in the Apollo server to the SDK:
+To start running bid requests you have to provide an Account Id for your organization in Apollo server to the SDK:
 
 ```
-OXSettings.setBidServerAccountId(YOUR_ACCOUNT_ID)
+ApolloSettings.setAccountId(YOUR_ACCOUNT_ID)
 ```
 
-The best way to achieve this is by utilizing the `onCreate()` method of your Application class.
+The best place to do it is the `onCreate()` method of your Application class.
 
-The account ID is an identifier of the **Stored Request** of your organization on the Apollo UI.
+The account ID is an identifier of the **Stored Request** of your organization on the Apollo UI. 
 
 ### Add In-App Bidding Adapters
 
-Adapters for the In-App bidding SDK are open source classes that serve like proxies between the MoPub SDK and any other one. For more details about Mediation and Adapters read the [MoPub's Documentation](https://developers.mopub.com/networks/integrate/mopub-network-mediation-guidelines/).
+Adapters for In-App bidding SDK are open source classes that serve like proxies between MoPub SDK and any other one. For more details about Mediation and Adapters read the [MoPub's Documentation](https://developers.mopub.com/networks/integrate/mopub-network-mediation-guidelines/).
 
-To integrate adapters for the In-App Bidding SDK just add the following lines in your build.gradle files:
-
+To integrate adapters for In-App Bidding SDK just add the following lines in your build.gradle files:
 Root build.gradle
 ```
 allprojects {
@@ -76,7 +76,7 @@ App module build.gradle:
 implementation('com.openx:apollo-mopub-adapters:x.x.x')
 ```
 
-Or you can [download](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.0.0/OpenX_Apollo_Android_MoPub_Adapters_1.0.0.zip) it manually and add it as any other regular library.
+Or you can [download](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.0.0/OpenX_Apollo_Android_MoPub_Adapters_1.0.0.zip) it manually and add as any other regular library.
 
 ### Banner API
 
@@ -114,19 +114,19 @@ private fun fetchAdUnit(configId: String, size: AdSize) {
 
 #### Step 1: Create Ad View
 
-In the MoPub integration scenario the MoPub's SDK plays the central role in managing ad views in the application's UI. You have to create and place MoPub's Ad View into the app page. If a winning bid on Apollo wins in the MoPub waterfall, it will be rendered via Mediation in the place of the original MoPub's Ad View by the Apollo SDK.
+In the scenario with MoPub integration the MoPub's SDK plays the central role in managing ad views in the application's UI. You have to create and place MoPub's Ad View into the app page. If a winning bid on Apollo wins in the MoPub waterfall it will be rendered via Mediation in the place of original MoPub's Ad View by Apollo SDK.
 
 
 #### Step 2: Create Ad Unit
 
-Create the **`MoPubBannerAdUnit`** object with parameters:
+Create the **MoPubBannerAdUnit** object with parameters:
 
-- **`configId`** - an ID of Stored Impression on the Apollo server
-- **`size`** - the size of the ad unit which will be used in the bid request.
+- **configId** - an ID of Stored Impression on the Apollo server
+- **size** - the size of the ad unit which will be used in the bid request.
 
 #### Step 3: Fetch Demand
 
-To run an auction on Apollo, run the `fetchDemand()` method which performs several actions:
+To run an auction on Apollo run the `fetchDemand()` method which performs several actions:
 
 - Makes a bid request to Apollo
 - Sets up the targeting keywords to the MoPub's ad unit
@@ -140,7 +140,7 @@ When the bid request has completed, the responsibility of making the Ad Request 
 
 #### Step 5: Rendering
 
-If the Apollo bid wins on MoPub it will be rendered by `OpenXApolloBannerAdapter`. You do not have to do anything for this.  Just make sure that your order has been set up correctly and an adapter is added.
+If the Apollo bid wins on MoPub it will be rendered by `OpenXApolloBannerAdapter`. You don't have to do anything for this.  Just make sure that your order had been set up correctly and an adapter is added.
 
 ### Interstitial API
 
@@ -168,8 +168,8 @@ private fun fetchInterstitial() {
         moPubInterstitial?.load()
     }
 }
-
-
+    
+    
 //...
 // After ad is loaded you can execute `show` to trigger ad display
 moPubInterstitial?.show()
@@ -177,7 +177,7 @@ moPubInterstitial?.show()
 
 The way of displaying **Video Interstitial Ad** is almost the same with two differences:
 
-- Need to customize the ad unit kind
+- Need customize the ad unit kind
 - No need to set up `minSizePercentage`
 
 ``` kotlin
@@ -211,14 +211,14 @@ moPubInterstitial?.show()
 
 #### Step 1: Create Ad View
 
-In the MoPub integration scenario the MoPub SDK plays the central role in managing ad views in the application's UI. If a winning bid on Apollo wins in the MoPub waterfall, it will be rendered via Mediation by the Apollo SDK.
+In the scenario with MoPub integration the MoPub SDK plays the central role in managing ad views in the application's UI. If a winning bid on Apollo wins in the MoPub waterfall it will be rendered via Mediation by Apollo SDK.
 
 
 #### Step 2: Create Ad Unit
 
-Create the **`MoPubInterstitialAdUnit`** object with the parameter:
+Create the **MoPubInterstitialAdUnit** object with parameters:
 
-- **`configId`** - an ID of Stored Impression on the Apollo server
+- **configId** - an ID of Stored Impression on the Apollo server
 
 #### Step 3: Fetch Demand
 
@@ -236,7 +236,7 @@ When the bid request has been completed the responsibility of making the Ad Requ
 
 #### Step 5: Rendering
 
-If the Apollo bid wins on MoPub it will be rendered by `OpenXApolloInterstitialAdapter`. You do not have to do anything for this.  Just make sure that your order has been set up correctly and an adapter is added.
+If the Apollo bid wins on MoPub it will be rendered by `OpenXApolloInterstitialAdapter`. You do not have to do anything for this.  Just make sure that your order had been set up correctly and an adapter is added.
 
 
 However, due to the expiration, the ad could become invalid with time. So it is always useful to check it with `interstitial?.isReady` before display.
@@ -244,14 +244,14 @@ However, due to the expiration, the ad could become invalid with time. So it is 
 
 ### Rewarded API
 
-To display an ad you need to implement the following easy steps:
+To display an ad you need to implement these easy steps:
 
 
 ``` kotlin
 private fun initRewarded() {
     // 1. Create MoPubRewardedVideoAdUnit instance
     rewardedAdUnit = MoPubRewardedVideoAdUnit(requireContext(), adUnitId, configId)
-
+    
     // 2. Initialize MoPub SDK and MoPubRewardedVideoManager.
     val builder = SdkConfiguration.Builder(adUnitId)
     MoPubRewardedVideoManager.init(requireActivity())
@@ -278,15 +278,15 @@ private fun fetchRewarded(adUnitId: String) {
 MoPubRewardedVideos.showRewardedVideo(adUnitId)
 ```
 
-#### Step 1: Create a Rewarded Ad Unit
+#### Step 1: Create an Rewarded Ad Unit
 
-Create the **`MoPubRewardedVideoAdUnit`** object with the parameter:
+Create the **MoPubRewardedVideoAdUnit** object with parameters:
 
-- **`configId`** - an ID of Stored Impression on the Apollo server
+- **configId** - an ID of Stored Impression on the Apollo server
 
 #### Step 2: Fetch Demand
 
-To run an auction on Apollo, run the `fetchDemand()` method which does several things:
+To run an auction on Apollo run the `fetchDemand()` method which does several things:
 
 - Makes a bid request to Apollo
 - Sets up the targeting keywords
@@ -299,4 +299,12 @@ When the bid request has completed, the responsibility of making the Ad Request 
 
 #### Step 5: Rendering
 
-If the Apollo bid wins on MoPub it will be rendered by `OpenXApolloRewardedVideoAdapter`. You do not have to do anything for this.  Just make sure that your order has been set up correctly and an adapter is added.
+If the Apollo bid wins on MoPub it will be rendered by `OpenXApolloRewardedVideoAdapter`. You do not have to do anything for this.  Just make sure that your order had been set up correctly and an adapter is added.
+
+
+
+
+
+
+
+
