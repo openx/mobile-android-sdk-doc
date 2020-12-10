@@ -2,7 +2,7 @@
 
 ## Version 1.1.0
 
-December 25, 2020
+December 15, 2020
 
 **Features**
 
