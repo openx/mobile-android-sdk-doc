@@ -60,7 +60,7 @@ App module build.gradle:
 implementation('com.openx:apollo-gam-event-handlers:x.x.x')
 ```
 
-Or you can [download](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.0.0/OpenX_Apollo_Android_GAM_Event_Handlers_1.0.0.zip) it manually and add as any other regular library.
+Or you can [download](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/event-handlers/GAM/1.1.0/OpenX_Apollo_Android_GAM_Event_Handlers_1.1.0.zip) it manually and add as any other regular library.
 
 
 ### Init In-App Bidding SDK

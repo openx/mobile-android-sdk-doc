@@ -76,7 +76,7 @@ App module build.gradle:
 implementation('com.openx:apollo-mopub-adapters:x.x.x')
 ```
 
-Or you can [download](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.0.0/OpenX_Apollo_Android_MoPub_Adapters_1.0.0.zip) it manually and add as any other regular library.
+Or you can [download](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/event-handlers/MoPub/1.1.0/OpenX_Apollo_Android_MoPub_Adapters_1.1.0.zip) it manually and add as any other regular library.
 
 ### Banner API
 

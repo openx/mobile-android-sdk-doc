@@ -35,8 +35,8 @@ dependencies {
 
 #### Download SDK and demo applications
 
-- [OpenX In-App Bidding SDK](https://storage.cloud.google.com//sdks/apollo/release/android/sdk/1.0.0/OpenX_Apollo_SDK_Android_1.0.0.zip) and [Demo Application](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.0.0/OpenX_Apollo_SDK_Android_Demo_1.0.0.zip)
-- [MoPub Adapters](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.0.0/OpenX_Apollo_Android_MoPub_Adapters_1.0.0.zip) and [GAM Event Handlers](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.0.0/OpenX_Apollo_Android_GAM_Event_Handlers_1.0.0.zip)
+- [OpenX In-App Bidding SDK](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.1.0/OpenX_Apollo_SDK_Android_1.1.0.zip) and [Demo Application](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.1.0/OpenX_Apollo_SDK_Android_Demo_1.1.0.zip)
+- [MoPub Adapters](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/event-handlers/MoPub/1.1.0/OpenX_Apollo_Android_MoPub_Adapters_1.1.0.zip) and [GAM Event Handlers](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/event-handlers/GAM/1.1.0/OpenX_Apollo_Android_GAM_Event_Handlers_1.1.0.zip)
 
 
 ## In-App Bidding SDK Overview

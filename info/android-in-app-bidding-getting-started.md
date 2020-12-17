@@ -66,7 +66,7 @@ Depending on Primary Ad Server used, In-App Bidding SDK supports these kinds of 
 
 **Integration Features and Tips:**
 
-- To inspect the code integration download and run a [Demo Application](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.0.0/OpenX_Apollo_SDK_Android_Demo_1.0.0.zip)
+- To inspect the code integration download and run a [Demo Application](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.1.0/OpenX_Apollo_SDK_Android_Demo_1.1.0.zip)
 - [Testing and troubleshooting](android-sdk-self-test.md)
 
 
