@@ -8,13 +8,13 @@ your implementation.
 debugging proxy](#using-charles-web-proxy) such as Charles Web Proxy. You may need to
 provide logs to OpenX.
 
-General Testing Requirements
+General testing requirements
 ----------------------------------------
 
 Please make sure that you:
 
 -   Have a good communications connection on the device, such as
-    reliable wireless network signal. If you can't reproduce the
+    reliable wireless network signal. If you can\'t reproduce the
     problem, it could be a communications issue.
 -   Have a valid user agent if you are expecting live ads through the
     OpenX Ad Exchange. Testing with a real device that does not have ad
@@ -29,7 +29,7 @@ Please make sure that you:
     -   `onAdFailed` (highly recommended)
     -   Other listener methods as needed
 -   Have turned on the SDK logging by setting the
-    [OXSettings](../info/android-sdk-parameters.md#oxsettings) `logLevel`
+    [ApolloSettings](../info/android-sdk-parameters.md#apollosettings) `logLevel`
     parameter to `DEBUG` on app `init`.
     > **Tip:** You may want to copy and save your on-screen log messages in case you need to include them in your resolution assistance request
 -   Are using the latest version of the SDK (to check for the latest
@@ -81,7 +81,7 @@ below.
   | No impression or no click tracking recorded.                 |                                                              | Request resolution assistance through the [OpenX Support Community](https://community.openx.com/s/). |
 
 
-Ad Exception Types and Examples
+Ad exception types and examples
 --------------------------------------
 
 Exceptions can inform you of configuration issues or possible issues

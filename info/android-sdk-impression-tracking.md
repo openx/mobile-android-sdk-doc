@@ -2,20 +2,20 @@
 
 ## Responsibilities
 
-The impression tracking in the In-App Bidding SDK depends on a certain integration approach.
+The impression tracking in In-App Bidding SDK depends on a certain integration approach. 
 
-In case of a GAM or MoPub integration when the Ad Server ad wins - the impression will be tracked according to the policy of the certain Primary Ad Server SDK that will handle the rendering.
+In case of GAM or MoPub integration when the Ad Server ad wins - the impression will be tracked according to the policy of the certain Primary Ad Server SDK that will handle the rendering.
 
-If the Apollo ad wins on the Primary Ad Server Auction, the impression tracking will depend on particular integration kind:
+If Apollo ad wins on the Primary Ad Server Auction, the impression tracking will depend on particular integration kind:
 
 * **GAM** impression will be tracked only for banner ads since it allows [manual impression counting](https://developers.google.com/ad-manager/mobile-ads-sdk/android/banner#manual_impression_counting). In-App Bidding SDK is not able to track impressions for GAM Interstitial or Rewarded ads.
-* **MoPub** impression will be tracked as stated in the MoPub policies because the rendering part is performed according to the Mediation feature.
+* **MoPub** impression will be tracked as stated in the MoPub policies since the rendering part is performed according to the Mediation feature. 
 * **Pure In-App Bidding** impression pixels for Open Measurement and VAST will be tracked according to the [In-App Bidding Impression](#in-app-bidding-impression) policies of the SDK.
 
 
 ## In-App Bidding Impression
 
-The In-App Bidding SDK tracks the impression pixel as stated in a definition of **render impression** from [Mobile Application Advertising Measurement Guidelines](http://mediaratingcouncil.org/Mobile%20In-App%20Measurement%20Guidelines%20(MMTF%20Final%20v1.1).pdf):
+In-App Bidding SDK tracks the impression pixel as stated in a definition of **render impression** from [Mobile Application Advertising Measurement Guidelines](http://mediaratingcouncil.org/Mobile%20In-App%20Measurement%20Guidelines%20(MMTF%20Final%20v1.1).pdf):
 
 
 > **Ad Impression**: A measurement of responses from an ad delivery system to an ad request from the user's device, which is filtered for invalid traffic and is recorded at a point as late as possible in the process of delivery of the creative material to the user's device. The ad must be loaded and at minimum begin to render in order to count it as a valid ad impression. Measurement of begin to render should include logical components necessary to display the ad, but does not necessarily include logical elements that are not essential (such as other tracking elements).
@@ -28,7 +28,7 @@ This rule is applied to all tracking pixels, which are managed by In-App Bidding
 ## MRAID
 
 ### MRAID 2.0 Creative
-The SDK broadcasts the `mraid.viewableChange()` event when the ad becomes rendered. It means that for proper impression tracking with MRAID the creative's code for tracking impression must depend on `mraid.isViewable()`. For example:
+SDK broadcasts the `mraid.viewableChange()` event when the ad becomes rendered. It means that for proper impression tracking with MRAID the creative's code for tracking impression must depend on `mraid.isViewable()`. For example:
 
 
 ``` javascript
@@ -43,6 +43,6 @@ Otherwise the impression tracking would be inconsistent with OpenX approach.
 
 ### MRAID 3.0 Creative
 
-For the ads that support the MRAID 3, the impression tracking code should be rather dependent on the `exposureChange()` function. Since it provides much more information about the viewability of an Ad Container, the impression tracking could be much more accurate and correspond to the MRC and IAB guidelines.
+For the ads that support the MRAID 3, the impression tracking code should be rather dependent on `exposureChange()` function. Since it provides much more information about the viewability of an Ad Container, the impression tracking could be much more accurate and correspond to the MRC and IAB guidelines.
 
 However, the IAB strongly recommends not to use the MRAID facilities to track impressions. The best practice is to use the **Open Measurement** framework which is supported by OpenX SDK as well.
