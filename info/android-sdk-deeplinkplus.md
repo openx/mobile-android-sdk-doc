@@ -68,7 +68,7 @@ The SDK will process this scheme regarding to the standard.
 
 ## Demo
 
-Check out the following examples from [Demo Application](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.1.0/OpenX_Apollo_SDK_Android_Demo_1.1.0.zip) on the real device:
+Check out the following examples from [Demo Application](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.2.0/OpenX_Apollo_SDK_Android_Demo_1.2.0.zip) on the real device:
 
 - **Banner with deeplink+**
 - **Video Interstitial with deeplink+**
