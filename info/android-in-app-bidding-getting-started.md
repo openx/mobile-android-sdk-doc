@@ -1,55 +1,87 @@
 # Getting started with In-App Bidding
 
 
-The In-App Bidding SDK provides an access to the header bidding power hosted by OpenX. It allows publishers to increase the revenue by running a parallel auction on the server-side, inject a winning bid into the predefined waterfall and render premium ad formats with the best quality according to the latest industry standards. 
+Apollo SDK provides access to the header bidding power hosted by OpenX. It allows publishers to increase the revenue by running a parallel auction on the server-side, inject the winning bid into the predefined waterfall and render premium ad formats with the best quality according to the latest industry standards. 
 
-## In-App Bidding Overview  
+## Integration Scenarious 
 
+There are three integration scenarios supported by Apollo SDK. 
 
-<img src="res/In-App-Bidding-Overview.png" alt="Pipeline Screenshot" align="center">
+- **With Primary Ad Server** when the winning bid is rendered by Apollo SDK but other ads are rendered by Primary Ad Server SDK.
+- **Pure In-App Bidding** when there is no Primary ad server and the winning bid is rendered right after an auction on Apollo.
+- **Vanilla Prebid Integration** when the winning bid is rendered by Prebid Universal Creative.
 
-1. In-App Bidding SDK sends the bid request to the OpenX Apollo server.
+Below you can find their description and select the most suitable for your application.
+
+  
+### Apollo SDK with Primary Ad Server
+
+<img src="res/Apollo-In-App-Bidding-Overview-Apollo-with-Primary-Ad-Server.png" alt="Pipeline Screenshot" align="center">
+
+1. Apollo SDK sends the bid request to the Apollo server.
 2. Apollo server runs the header bidding auction among preconfigured demand partners.
-3. In-App Bidding SDK sets up the targeting keywords of the winning bid to the ad unit of Primary Ad Server SDK.
-4. Primary Ad Server SDK sends the ad request to the primary Ad Server
-5. Depending on the ad response In-App Bidding SDK renders the winning bid or allows Primary Ad Server SDK to show its own winning ad in the internal waterfall.  
+3. Apollo Server responses with the winning bid that contains targeting keywords.
+4. Apollo SDK sets up the targeting keywords of the winning bid to the ad unit of Primary Ad Server SDK.
+5. Primary Ad Server SDK sends the ad request to the primary Ad Server
+6. Primary Ad Server responds with an ad
+7. The info about the winning ad is passed to the Apollo SDK
+8. Depending on the ad response Apollo SDK renders the winning bid or allows Primary Ad Server SDK to show its own winning ad.
 
-> Note: steps 3 and 4 are relevant for the case of integration with Primary Add Server. In case of the Pure In-App Bidding scenario, the winning bid will be rendered immediately after it was received. 
+### Pure In-App Bidding
+
+<img src="res/Apollo-In-App-Bidding-Overview-Pure-Apollo.png" alt="Pipeline Screenshot" align="center">
+
+1. Apollo SDK sends the bid request to the Apollo server.
+2. Apollo server runs the header bidding auction among preconfigured demand partners.
+3. Apollo Server responses with the winning bid that contains targeting keywords.
+4. Apollo SDK renders the winning bid.
+
+
+### Vanilla Prebid Integration
+
+<img src="res/Apollo-In-App-Bidding-Overview-Vanilla-Prebid-Integration.png" alt="Pipeline Screenshot" align="center">
+
+1. Apollo SDK sends the bid request to the Apollo server.
+2. Apollo server runs the header bidding auction among preconfigured demand partners.
+3. Apollo Server responses with the winning bid that contains targeting keywords.
+4. Apollo SDK sets up the targeting keywords of the winning bid to the ad unit of Primary Ad Server SDK.
+5. Primary Ad Server SDK sends the ad request to the primary Ad Server
+6. Primary Ad Server responds with an ad
+7. Primary Ad Server SDK loads the ad with Prebid Universal Creative into the WebView
+8. Prebid Universal Creative loads the winning bid from the Prebid Cache and renders it.
 
 
 ## Supported Ad Formats
 
-OpenX In-App Bidding SDK supports next premium ad formats:
+Apollo SDK supports next ad formats:
 
  - Display Banner
  - Display Interstitial
  - Video Interstitial
  - Rewarded Video
  - Outstream Video (for GAM and Pure In-App Bidding)
- - Native styles
+ - Native Styles Ads
+ - Native Ads
 
 ## Apollo Setup
 
-To start running header bidding auction you need to register on Apollo server and create configurations for ad units and demand partners. See the [setup instructions]() for details.
+To start running header bidding auction you need to register on Apollo and create respective configurations for organization and ad units. To create an Apollo account, visit the [OpenX Apollo](https://www.openx.com/prebid/) page first.
 
-Before the integration of the In-App Bidding SDK you should have:
+Before integrating the Apollo SDK you will need next keys:
 
 - **Apollo Account ID** - an identifier of the **Stored Request** of your organization on the Apollo UI.
-- **Configuration ID** - an identifier of the **Stored Impression** which contains information about bidders for a particular ad unit in the app. You need as many ids as many different ad units you want to integrate.
+- **Configuration ID** - an identifier of the **Stored Impression** which contains information about bidders for a particular ad unit. You need as many ids as many different ad units you want to integrate.
 
 
 ## Init Apollo SDK
 
-To use In-App Bidding SDK you first need to [integrate](android-sdk-integration.md) the Apollo SDK.
+Firstly [integrate](android-sdk-integration.md) the Apollo SDK.
 
-To start running bid requests you have to provide the SDK an Account Id for your organization on Apollo server.
+Then provide the **Apollo Account ID** of your organization. The best place to do it is the `onCreate()` method of your Application class.
 
 ```
 ApolloSettings.setAccountId(YOUR_ACCOUNT_ID)
 ```
-
-The best place to do it is the `onCreate()` method of your Application class. The account ID is an identifier of the **Stored Request** of your organization on the Apollo UI.
-
 
 ## Integration Scenarios and Tips
 
@@ -66,7 +98,7 @@ Depending on Primary Ad Server used, In-App Bidding SDK supports these kinds of 
 
 **Integration Features and Tips:**
 
-- To inspect the code integration download and run a [Demo Application](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.1.0/OpenX_Apollo_SDK_Android_Demo_1.1.0.zip)
+- To inspect the code integration download and run a [Demo Application](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.2.0/OpenX_Apollo_SDK_Android_Demo_1.2.0.zip)
 - [Testing and troubleshooting](android-sdk-self-test.md)
 
 

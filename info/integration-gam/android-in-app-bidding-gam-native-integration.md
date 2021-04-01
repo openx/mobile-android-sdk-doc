@@ -54,6 +54,7 @@ And assign the [listeners](../android-in-app-bidding-listeners.md) for processin
 #### Step 3: Create and provide NativeAdConfiguration
 
 NativeAdConfiguration creation example:
+
 ``` kotlin
 private fun createNativeAdConfiguration(): NativeAdConfiguration {
     val nativeAdConfiguration = NativeAdConfiguration()
@@ -106,6 +107,7 @@ private fun createNativeAdConfiguration(): NativeAdConfiguration {
     return nativeAdConfiguration
 }
 ```
+
 See more NativeAdConfiguration options [here](../native/android-native-ad-configuration.md).
 
 #### Step 4: Load the Ad

@@ -10,20 +10,21 @@ So the essential part of Apollo integration is creating a special Line Items on 
 
 ## Best Practises 
 
-According to prebid's suggestions, you have to create a set of line items with unique price targets to get the best revenue. Line Items should be created according to the [price granularity](http://prebid.org/prebid-mobile/adops-price-granularity.html#autoGranularityBucket) policy. That means that you have to create more than one hundred line items to get the best coverage.
+From the very beginning publishers should pay attention to the Best Practices of configuring orders on the Primary Ad Server. It will help to improve monetization from the first steps. 
 
+In order to get the best revenue publishers have to create Line Items with unique price targets according to the [price granularity](http://prebid.org/prebid-mobile/adops-price-granularity.html#autoGranularityBucket) policy. That means that it is necessary to create more than one hundred line items to get the best coverage.
+
+Publishers can do it by hands, develop special scripts, or using some tool for generating orders like [PubMonkey](https://chrome.google.com/webstore/detail/pubmonkey/cjbdhopmleoleednpeaknmmbepfkhaml?hl=en)
  
 ## Order Setup
 
-### Manual
-
-#### Step 1: Create New Order
+### Step 1: Create New Order
 
  <img src="../res/orders/order-mopub-create.png" alt="Pipeline Screenshot" align="center">
  
 ### Step 2: Create Line Item
  
-#### Line Item Type
+#### Line Item: Display, Video
 
 To integrate the In-App Bidding into your app you have to create a Custom Ad Network Line Item with a specific Targeting keyword. Note that `Custom Ad Network` type is not suitable for Native Style Ads, see [Native Style Line Item and creative](#native-style-line-item-and-creative) for more details.
 
@@ -36,11 +37,24 @@ Regardless of the ability to name a Line Item in any way we strongly suggest usi
     - For Banner API: **OpenXApolloBannerAdapter**
     - For Interstitial API: **OpenXApolloInterstitialAdapter**
     - For Rewarded API: **OpenXApolloRewardedVideoAdapter**
+    - For Native API: ***TODO***
 - **Custom event data**: {}
 
 <img src="../res/orders/order-mopub-li-type.png" alt="Pipeline Screenshot" align="center">
 
-#### Native Style Line Item and creative
+#### Line Item: Native
+
+If you integrate Native Ads not via mediation you should create regular line tiems
+
+<img src="../res/orders/order-mopub-order-native.png" alt="Pipeline Screenshot" align="center">
+
+After that you should create a custom Native creative with **obligatory** property **isApolloCreative** and value **true**.
+
+<img src="../res/orders/order-mopub-creative-native.png" alt="Pipeline Screenshot" align="center">
+
+This property will show Apollo SDK that it should render the ad from the winning bid.
+
+#### Line Item: Native Style
 
 Native styles ads are using `non-guaranteed` line item type and Medium Rectangle format HTML creative.
 

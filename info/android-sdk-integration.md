@@ -30,7 +30,7 @@ Manual Integration
 ------------------------------
 
 
-1. [Download](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.0.0/OpenX_Apollo_SDK_Android_1.0.0.zip) the OpenX Mobile Android SDK zip file.
+1. [Download](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.2.0/OpenX_Apollo_SDK_Android_1.2.0.zip) the OpenX Mobile Android SDK zip file.
 1. [Import the SDK](../legacy-sdk/android-sdk-info/android-sdk-importing.md) into your app.
 
 Updating your Android manifest

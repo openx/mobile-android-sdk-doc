@@ -1,5 +1,14 @@
 # OpenX Android Apollo SDK Release notes
 
+## Version 1.2.0
+
+March 22, 2021
+
+**Features**
+
+- Support Native ads for all integration kinds
+- Open Measurement SDK support for native ads
+
 ## Version 1.1.0
 
 December 15, 2020

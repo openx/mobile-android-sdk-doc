@@ -1,69 +1,54 @@
 # Google Ad Manager Integration
 
-## Table of Contents
+The integration of Apollo SDK with Google Ad Manager (GAM) assumes that publisher has an account on GAM and has already integrated the GAM SDK into the app project. Apollo SDK was tested with **GAM SDK 7.61.0**. If you have any trouble with this or other versions, please, contact the [Apollo Support](https://www.openx.com/prebid/#form).
 
-1. [SDKs integration](#gam-sdk-integration)
-2. [Order setup](#order-setup)
-3. [Mobile API](#mobile-api)
-    - [Init SDK](#init-in-app-bidding-sdk)
-    - [Banner](#banner-api)
-    - [Interstitial](#interstitial-api)
-    - [Rewarded](#rewarded-api)
-
-
-## GAM SDK Integration
-
-The prerequisite of In-App Bidding integration with Google Ad Manager (GAM or DFP) is an installed GAM SDK. If you do not have GAM SDK in the app yet, refer the [Google Documentation](https://developers.google.com/ad-manager/mobile-ads-sdk/android/quick-start) about the integration process. The In-App Bidding SDK was tested with GAM SDK 7.61.0. If you have any trouble with this or other versions, please, contact the [OpenX Support](https://docs.openx.com/Content/support.html).
-
+If you do not have GAM SDK in the app yet, refer the the [Google Integration Documentation](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/quick-start).
 
 ## Order Setup 
 
-To integrate header bidding with GAM you have to prepare a specific Order following the [instructions](android-in-app-bidding-gam-order-setup.md) for particular ad kind.
+To integrate header bidding with GAM you have to prepare a specific Order following the [instructions](ios-in-app-bidding-gam-order-setup.md) for particular ad kind.
 
-## Mobile API
+### Rendering of vanilla prebid orders
 
-<img src="../res/GAM-In-App-Bidding-Overview.png" alt="Pipeline Screenshot" align="center">
+If you want to run In-App Biding with Apollo using your Prebid orders on GAM you do not have to change anything on GAM. **Apollo SDK is able to work with prebid orders**. Just replace Prebid SDK with Apollo SDK and follow the current integration instructions. 
 
-OpenX In-App Bidding SDK provides an ability to integrate header bidding for these ad kinds:
+> Subsequently, we recommend to switch to Apollo orders in order to get better rendering, measurement and targeting.
+
+
+## GAM Integration Overview
+
+<img src="../res/Apollo-In-App-Bidding-Overview-GAM.png" alt="Pipeline Screenshot" align="center">
+
+**Steps 1-2** Apollo SDK makes a bid request. Apollo server runs an auction and returns the winning bid to the SDK.
+
+**Step 3** Apollo SDK via GAM Event Handler sets up targeting keywords into the GAM's ad unit.
+
+**Step 4** GAM SDK makes an ad request. GAM returns the winner of the waterfall.
+
+**Step 5** Basing on the ad response Apollo GAM Event Handler decided who won on the GAM - the Apollo bid or another ad source on GAM.
+
+**Step 6** The winner is displayed in the App with the respective rendering engine.
+  
+
+Apollo SDK supports these ad formats:
 
 - Display Banner
 - Display Interstitial
+- Native
+- [Native Styles](android-in-app-bidding-gam-native-integration.md)
 - Video Interstitial 
 - Rewarded Video
 - Outstream Video
-- [Native Styles](android-in-app-bidding-gam-native-integration.md)
 
-However, OpenX In-App Bidding GAM facade provides only three types of API classes for these ads:
+They can be integrated using these API categories.
 
-- **Banner API** - for **Display Banner** and **Outstream Video**
-- **Interstitial API** - for **Display** and **Video** Interstitials
-- **Rewarded API** - for **Rewarded Video**
-
-How to create an Apollo account and start to use the Apollo SDK, see at [Getting Started](../android-in-app-bidding-getting-started.md) page first.
-
-### Event Handlers
-
-GAM Event Handlers is a set of classes that wrap the GAM Ad Units and manage them respectively to the In-App Bidding flow. These classes are provided in the form of library that could be added to the app via Gradle:
-
-Root build.gradle
-```
-allprojects {
-    repositories {
-      ...
-      maven { url "http://sdk.prod.gcp.openx.org/" }
-      ...
-    }
-}
-```
-App module build.gradle:
-```
-implementation('com.openx:apollo-gam-event-handlers:x.x.x')
-```
-
-Or you can [download](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/event-handlers/GAM/1.1.0/OpenX_Apollo_Android_GAM_Event_Handlers_1.1.0.zip) it manually and add as any other regular library.
+- [**Banner API**](#Banner-API) - for *Display Banner* and *Outstream Video*
+- [**Interstitial API**](#Interstitial-API) - for *Display* and *Video* Interstitials
+- [**Rewarded API**](#Rewarded-API) - for *Rewarded Video*
+- [**Native API**](android-in-app-bidding-gam-native-integration.md) - for *Native Ads*
 
 
-### Init In-App Bidding SDK
+## Init Apollo SDK
 
 To start running bid requests you have to provide an **Account Id** for your organization on Apollo server to the SDK:
 
@@ -75,8 +60,32 @@ The best place to do it is the `onCreate()` method of your Application class.
 
 > **NOTE:** The account ID is an identifier of the **Stored Request** of your organization in the Apollo UI. 
 
+### Event Handlers
 
-### Banner API
+GAM Event Handlers is a set of classes that wrap the GAM Ad Units and manage them respectively to the In-App Bidding flow. These classes are provided in the form of library that could be added to the app via Gradle:
+
+Root build.gradle
+
+```
+allprojects {
+    repositories {
+      ...
+      maven { url "http://sdk.prod.gcp.openx.org/" }
+      ...
+    }
+}
+```
+
+App module build.gradle:
+
+```
+implementation('com.openx:apollo-gam-event-handlers:x.x.x')
+```
+
+Or you can [download](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/event-handlers/GAM/1.2.0/OpenX_Apollo_Android_GAM_Event_Handlers_1.2.0.zip) it manually and add as any other regular library.
+
+
+## Banner API
 
 To integrate a banner ad you need to implement three easy steps:
 
@@ -122,7 +131,7 @@ And assign the [listeners](../android-in-app-bidding-listeners.md) for processin
 
 Simply call the `loadAd()` method to start [In-App Bidding](../android-in-app-bidding-getting-started.md) flow. The In-App Bidding SDK starts the  bidding process right away.
 
-#### Outstream Video
+### Outstream Video
 
 For **Outstream Video** you also need to specify video placement type of the expected ad:
 
@@ -130,8 +139,7 @@ For **Outstream Video** you also need to specify video placement type of the exp
 bannerView.videoPlacementType = PlacementType.IN_BANNER // or any other available type
 ```
 
-
-### Interstitial API
+## Interstitial API
 
 To integrate interstitial ad you need to implement four easy steps:
 
@@ -218,7 +226,7 @@ override fun onAdLoaded(interstitialAdUnit: InterstitialAdUnit) {
 }
 ```
 
-### Rewarded API
+## Rewarded API
 
 To display an Rewarded Ad need to implement four easy steps:
 

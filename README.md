@@ -1,15 +1,14 @@
 # OpenX Apollo Android SDK
 
-The OpenX Apollo Android SDK allows you to integrate  into your apps prebid solution hosted by OpenX to increase revenue through mobile advertising.
+Apollo SDK is a part of OpenX Apollo platform which implements an In-App Bidding approach and gives opportunities to buyers to compete on your inventory at parallel bidding auctions. 
+
+The current SDK version is **1.2.0**.
+Go to [release notes](info/android-in-app-bidding-release-notes.md) for all SDK versions.
 
 > **_NOTE:_**  The documentation for the legacy OpenX SDK is available [here](legacy-sdk/README.md).
 
-## Getting Started
+## Quick Start
 
-For requirements and integration overview, see [Getting Started](info/android-in-app-bidding-getting-started.md).
-
-The current SDK version is **1.1.0**.
-Go to [release notes](info/android-in-app-bidding-release-notes.md) for all SDK versions.
 
 #### Gradle Integration
 
@@ -35,11 +34,13 @@ dependencies {
 
 #### Download SDK and demo applications
 
-- [OpenX In-App Bidding SDK](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.1.0/OpenX_Apollo_SDK_Android_1.1.0.zip) and [Demo Application](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.1.0/OpenX_Apollo_SDK_Android_Demo_1.1.0.zip)
-- [MoPub Adapters](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/event-handlers/MoPub/1.1.0/OpenX_Apollo_Android_MoPub_Adapters_1.1.0.zip) and [GAM Event Handlers](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/event-handlers/GAM/1.1.0/OpenX_Apollo_Android_GAM_Event_Handlers_1.1.0.zip)
+- [OpenX In-App Bidding SDK](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.2.0/OpenX_Apollo_SDK_Android_1.2.0.zip) and [Demo Application](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/sdk/1.2.0/OpenX_Apollo_SDK_Android_Demo_1.2.0.zip)
+- [MoPub Adapters](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/event-handlers/MoPub/1.2.0/OpenX_Apollo_Android_MoPub_Adapters_1.2.0.zip) and [GAM Event Handlers](https://storage.cloud.google.com/ox-cdn-prod-mobile/sdks/apollo/release/android/event-handlers/GAM/1.2.0/OpenX_Apollo_Android_GAM_Event_Handlers_1.2.0.zip)
 
 
-## In-App Bidding SDK Overview
+## Apollo SDK Overview
+
+For requirements and integration overview, see [Getting started with In-App Bidding](info/android-in-app-bidding-getting-started.md).
 
 Here are key capabilities of the Android In-App Bidding SDK:
 
@@ -50,7 +51,6 @@ Here are key capabilities of the Android In-App Bidding SDK:
 
 
 <img src="info/res/IAB_Cert.png" alt="Pipeline Screenshot" height="320" width="320" align="right">
-
 
 -   **Support of these premium ad formats:**
     -   Banner
@@ -73,4 +73,4 @@ Here are key capabilities of the Android In-App Bidding SDK:
 
 ## Contact Us
 
-If you have any questions or need help, go to [OpenX Support](https://docs.openx.com/Content/support.html).
+If you have any questions or need help, go to [Apollo Support](https://www.openx.com/prebid/#form).
